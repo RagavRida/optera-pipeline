@@ -4,6 +4,15 @@ Raw logs behind every number in the top-level README and DESIGN.md. Nothing here
 is regenerated or rounded for presentation — the ledgers are the append-only
 files the pipeline wrote call-by-call while running.
 
+## Current OpenAI evidence
+
+`openai/` contains the current, independently rerun GPT-4o baseline and
+GPT-4o-mini-router/GPT-4o-extractor comparison over all 47 input files:
+**$0.010309/doc → $0.008449/doc**, field accuracy **59/91 → 66/91**, and
+refusal accuracy **5/8 → 8/8**. It includes the raw cost/token ledgers and the
+full scored report. The artefacts in the rest of this folder are the earlier
+Anthropic benchmark and ablations.
+
 ## Ledgers (one JSONL row per API call)
 
 | file | what |

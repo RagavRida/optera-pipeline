@@ -18,9 +18,21 @@ from optera import score  # noqa: E402
 from optera.ledger import load_rows  # noqa: E402
 
 
-RUNS = {
-    "baseline": ("extractions_baseline_opus1x.json", "ledger_baseline_opus1x.jsonl"),
-    "optimized": ("extractions_optimized_accurate.json", "ledger_optimized_accurate.jsonl"),
+EVIDENCE_SETS = {
+    "openai": {
+        "directory": ROOT / "results" / "openai",
+        "runs": {
+            "baseline": ("extractions_baseline_gpt4o.json", "ledger_baseline_gpt4o.jsonl"),
+            "optimized": ("extractions_optimized_gpt4o.json", "ledger_optimized_gpt4o.jsonl"),
+        },
+    },
+    "anthropic": {
+        "directory": ROOT / "results",
+        "runs": {
+            "baseline": ("extractions_baseline_opus1x.json", "ledger_baseline_opus1x.jsonl"),
+            "optimized": ("extractions_optimized_accurate.json", "ledger_optimized_accurate.jsonl"),
+        },
+    },
 }
 
 
@@ -43,15 +55,19 @@ def _summarise(results_path: Path, ledger_path: Path) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Verify committed Optera cost/accuracy evidence")
-    ap.add_argument("--results", type=Path, default=ROOT / "results",
-                    help="directory containing committed extraction JSON and ledgers")
+    ap.add_argument("--evidence", choices=sorted(EVIDENCE_SETS), default="openai",
+                    help="committed provider-specific benchmark to verify (default: openai)")
+    ap.add_argument("--results", type=Path,
+                    help="override the evidence directory for a matching artifact layout")
     ap.add_argument("--json", action="store_true", help="emit machine-readable JSON only")
     args = ap.parse_args()
 
-    report: dict[str, dict] = {}
-    for label, (extractions, ledger) in RUNS.items():
-        result_path = args.results / extractions
-        ledger_path = args.results / ledger
+    evidence = EVIDENCE_SETS[args.evidence]
+    results_dir = args.results or evidence["directory"]
+    report: dict[str, dict] = {"evidence": args.evidence}
+    for label, (extractions, ledger) in evidence["runs"].items():
+        result_path = results_dir / extractions
+        ledger_path = results_dir / ledger
         missing = [str(path) for path in (result_path, ledger_path) if not path.exists()]
         if missing:
             ap.error(f"missing evidence artifact(s): {', '.join(missing)}")
@@ -68,7 +84,7 @@ def main() -> int:
         print(json.dumps(report, indent=2))
         return 0
 
-    print("OPTERA COMMITTED-EVIDENCE VERIFICATION (no API calls)")
+    print(f"OPTERA {args.evidence.upper()} EVIDENCE VERIFICATION (no API calls)")
     for label in ("baseline", "optimized"):
         item, acc = report[label], report[label]["accuracy"]
         print(

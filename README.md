@@ -5,8 +5,9 @@ mechanic logs, printed vendor bills, dashboard photos, and photos of objects
 that aren't documents at all — into clean structured JSON, as cheaply as
 possible without losing accuracy.
 
-**1.52x cheaper than a naive one-call-per-image baseline, at identical field
-accuracy, with hallucinated records reduced from 2 to 0.**
+**Archived Anthropic benchmark: 1.52x cheaper than a naive one-call-per-image
+baseline, at identical field accuracy, with hallucinated records reduced from
+2 to 0.**
 
 | | naive baseline | this pipeline |
 |---|---|---|
@@ -23,13 +24,31 @@ ledger using API-reported token counts. New runs write the same artifacts to
 `out/`; see [DESIGN.md](DESIGN.md) for methodology, error bars and known
 failure modes.
 
+### Current OpenAI re-run
+
+The current OpenAI configuration was re-run on all 47 files on 2026-07-28.
+It is **1.22x cheaper** than a same-provider GPT-4o baseline while improving
+field accuracy and eliminating non-document hallucinations:
+
+| | GPT-4o baseline | OpenAI optimized |
+|---|---:|---:|
+| cost / document | $0.010309 | **$0.008449** |
+| field accuracy | 59/91 (64.8%) | **66/91 (72.5%)** |
+| routing accuracy | 39/39 | 39/39 |
+| refusal accuracy | 5/8 | **8/8** |
+| hallucinated records | 2 | **0** |
+
+The call-by-call OpenAI ledger and full scored report are in
+[`results/openai/`](results/openai/). The original Anthropic experiment remains
+in `results/` as a separate, provider-specific ablation record.
+
 ---
 
 ## Run it
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env        # add ANTHROPIC_API_KEY
+cp openai.env.example .env  # add OPENAI_API_KEY
 make run                    # baseline vs optimised on images/, with scoring
 ```
 
@@ -50,8 +69,8 @@ make verify
 This recomputes the cost and accuracy summary from the committed extraction
 outputs, JSONL token/cost ledgers, and hand-written ground truth. It makes no
 network calls. It is evidence verification, **not** offline inference on new
-images; live `make run` requires either `ANTHROPIC_API_KEY` (the measured
-configuration) or a separately evaluated provider/model configuration.
+images; live `make run` requires an API key and model role configuration in
+`.env`.
 
 ### Other commands
 

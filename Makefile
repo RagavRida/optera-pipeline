@@ -1,4 +1,4 @@
-.PHONY: install install-dev run optimized baseline cheap verify sweep variance test test-cov lint clean
+.PHONY: install install-dev run optimized baseline cheap verify verify-anthropic sweep variance test test-cov lint clean
 
 install:
 	python3 -m pip install -r requirements.txt
@@ -23,6 +23,9 @@ cheap:
 # No images or model API credential required; this is not live inference.
 verify:
 	python3 scripts/verify_evidence.py
+
+verify-anthropic:
+	python3 scripts/verify_evidence.py --evidence anthropic
 
 # Evidence behind the per-class policy table in optera/config.py
 sweep:

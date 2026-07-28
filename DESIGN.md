@@ -6,6 +6,15 @@ What I built, what the numbers actually are, where it breaks, and what I'd do ne
 
 ## 1. The headline
 
+The current, runnable OpenAI configuration was re-measured on 2026-07-28:
+**$0.010309/doc → $0.008449/doc (18.0% saved), field accuracy 59/91 →
+66/91, refusal accuracy 5/8 → 8/8, and hallucinations 2 → 0.** Its complete
+report and call-by-call token ledger are in `results/openai/`.
+
+The detailed analysis below is the earlier Anthropic benchmark: it remains a
+useful ablation record, but its cost/model-specific observations are not
+presented as the current OpenAI result.
+
 Measured on all 47 starter images. Every figure below is a sum over the
 committed `results/ledger_*.jsonl` files, written call-by-call from
 API-reported token counts. New runs produce equivalent artifacts in `out/`.
