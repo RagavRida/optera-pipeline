@@ -16,9 +16,15 @@ from .ledger import Ledger
 from .preflight import PreflightResult
 from .providers import call_vision
 
-# Anthropic will not cache a prefix shorter than this (Haiku's floor; Sonnet and
-# Opus are 1024). Below it, cache_control is accepted and silently ignored.
-CACHE_MIN_CHARS = 8_000
+# Anthropic cache floors in tokens. Below these, cache_control is accepted and
+# silently ignored — the request succeeds but nothing is cached.
+# Haiku: 2048 tokens. Sonnet/Opus: 1024 tokens.
+# RULEBOOK_CORE (~400 tokens) is below both floors — caching was silently doing
+# nothing on extraction calls before rich_rulebook() was introduced.
+# rich_rulebook() is ~2100 tokens, above both floors.
+_HAIKU_CACHE_FLOOR_TOKENS = 2048
+_SONNET_OPUS_CACHE_FLOOR_TOKENS = 1024
+_APPROX_TOKENS_PER_CHAR = 4  # conservative; actual is closer to 3.8
 
 
 def _policy_for(doc_class: str) -> ClassPolicy:
@@ -36,20 +42,34 @@ def _resolution_for(pol: ClassPolicy, flags: list[str]) -> int:
     return min(pol.max_dim, MAX_USEFUL_DIM)
 
 
+def _cache_floor_tokens(model: str) -> int:
+    """Return the minimum cached-prefix length in tokens for this model."""
+    if "haiku" in model.lower():
+        return _HAIKU_CACHE_FLOOR_TOKENS
+    return _SONNET_OPUS_CACHE_FLOOR_TOKENS
+
+
 def _one_pass(pf: PreflightResult, doc_class: str, model: str, max_dim: int,
               jpeg_q: int, max_tokens: int, ledger: Ledger, stage: str,
               subtype: str | None = None) -> tuple[dict | None, str, float]:
     media, b64, nbytes = imaging.encode(pf.image, max_dim=max_dim, quality=jpeg_q)
-    system = prompts.RULEBOOK
+
+    # Use the rich rulebook (core + all few-shot examples). At ~2100 tokens it
+    # exceeds the cache floor for every model tier, so prompt caching fires from
+    # the second call onwards. The examples also directly improve accuracy on the
+    # three failure modes they demonstrate.
+    system = prompts.rich_rulebook()
+    floor = _cache_floor_tokens(model)
+    system_tokens_approx = len(system) // _APPROX_TOKENS_PER_CHAR
+    should_cache = system_tokens_approx >= floor
+
     resp = call_vision(
         model=model,
         system=system,
         text=prompts.extraction_prompt(doc_class, pf.warnings, subtype=subtype),
         images=[(media, b64)],
         max_tokens=max_tokens,
-        # Only request caching when the prefix can actually be cached, so the
-        # ledger never shows a cache line that did nothing.
-        cache_system=len(system) >= CACHE_MIN_CHARS,
+        cache_system=should_cache,
         temperature=0.0,
     )
     ledger.record(pf.doc_id, stage, model, resp.usage,

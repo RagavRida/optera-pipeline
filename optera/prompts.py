@@ -13,13 +13,13 @@ RULEBOOK below is the cacheable prefix; per-class specs are appended after it.
 """
 from __future__ import annotations
 
-from . import schemas
+from . import fewshots, schemas
 
 # --------------------------------------------------------------------------
 # Shared rulebook. Identical bytes on every extraction call, which is what
 # makes it a cache prefix rather than just boilerplate.
 # --------------------------------------------------------------------------
-RULEBOOK = """You are an extraction engine for Optera, processing phone photographs of \
+_RULEBOOK_CORE = """You are an extraction engine for Optera, processing phone photographs of \
 operational paperwork from Indian bus-fleet operators. Images arrive over WhatsApp: \
 skewed, shadowed, finger-occluded, multi-lingual, and frequently handwritten.
 
@@ -50,6 +50,34 @@ REFUSAL
   scene, or is blank or unreadable, it carries no structured record. Do not
   manufacture one. Refuse it as described in the task section below.
 """
+
+# --------------------------------------------------------------------------
+# RULEBOOK variants:
+#
+# RULEBOOK      — core rules only (~400 tokens). Used when caching is
+#                 not beneficial (e.g. single-shot calls, short jobs).
+#
+# RICH_RULEBOOK — core + all six few-shot examples (~2100 tokens). This
+#                 exceeds both the Haiku (2048) and Sonnet/Opus (1024)
+#                 prompt-caching floors, so the system prompt is cached
+#                 after the first call. The ~$0.013 cache-write cost is
+#                 recovered after ~2 subsequent reads.
+#
+#                 The examples also directly improve accuracy on the three
+#                 failure modes they demonstrate: decimal odometers, blank
+#                 checklist rows, and the DEF-label refusal trap.
+# --------------------------------------------------------------------------
+RULEBOOK = _RULEBOOK_CORE
+
+# Lazily constructed so fewshots.py is imported only when needed.
+_RICH_RULEBOOK: str | None = None
+
+
+def rich_rulebook() -> str:
+    global _RICH_RULEBOOK
+    if _RICH_RULEBOOK is None:
+        _RICH_RULEBOOK = _RULEBOOK_CORE + "\n\n" + fewshots.all_examples()
+    return _RICH_RULEBOOK
 
 
 def classification_prompt() -> str:

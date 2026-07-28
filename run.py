@@ -102,6 +102,8 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--no-dedupe", action="store_true")
     ap.add_argument("--no-escalation", action="store_true")
+    ap.add_argument("--no-batch", action="store_true",
+                    help="disable multi-image batching and rich-rulebook caching")
     ap.add_argument("--no-score", action="store_true")
     ap.add_argument("--out", default="out")
     ap.add_argument("--profile", choices=["cheap", "balanced", "accurate"],
@@ -168,6 +170,7 @@ def main() -> int:
         t0 = time.time()
         res = pipeline.run_optimized(
             paths, led, workers=args.workers, dedupe=not args.no_dedupe,
+            batch=not args.no_batch,
             allow_escalation=not args.no_escalation, progress=progress)
         led.close()
         pipeline.write_results(res, out / f"results_optimized_{stamp}.json")
