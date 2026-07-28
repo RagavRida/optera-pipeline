@@ -4,3 +4,8 @@ __pycache__/
 out/
 .venv/
 venv/
+
+# Client operational data - NOT redistributed. See images/README.md
+images/*.jpg
+images/*.jpeg
+images/*.png
