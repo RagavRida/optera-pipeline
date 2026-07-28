@@ -56,7 +56,7 @@ def _print_summary(title: str, summ: dict) -> None:
     print(f"  input tokens         {summ['input_tokens']:,}")
     print(f"  output tokens        {summ['output_tokens']:,}")
     if summ["cache_read_tokens"]:
-        print(f"  cache reads          {summ['cache_read_tokens']:,} tokens at 0.10x")
+        print(f"  cached prompt tokens {summ['cache_read_tokens']:,}")
     print(f"  TOTAL COST           {_fmt_usd(summ['total_cost_usd'])}")
     print(f"  COST PER DOC         {_fmt_usd(summ['cost_per_doc_usd'])}")
     print(f"  cost per 1,000 docs  ${summ['cost_per_1000_docs_usd']:,.2f}")
@@ -102,14 +102,8 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="process only the first N files")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--no-dedupe", action="store_true")
-    ap.add_argument("--no-escalation", action="store_true")
-    ap.add_argument("--batch", action="store_true",
-                    help="opt in to experimental multi-image extraction; score it before production")
     ap.add_argument("--no-score", action="store_true")
     ap.add_argument("--out", default="out")
-    ap.add_argument("--profile", choices=["cheap", "balanced", "accurate"],
-                    default="accurate",
-                    help="cost/accuracy operating point (see DESIGN.md)")
     ap.add_argument("--quiet", action="store_true")
     ap.add_argument("--log-level", default="WARNING",
                     choices=["DEBUG", "INFO", "WARNING", "ERROR"],
@@ -136,9 +130,6 @@ def main() -> int:
             datefmt="%H:%M:%S"))
     logging.basicConfig(level=level, handlers=[handler])
 
-    from optera.config import apply_profile
-    apply_profile(args.profile)
-
     in_dir = Path(args.input)
     if not in_dir.exists():
         print(f"error: input directory {in_dir} does not exist", file=sys.stderr)
@@ -158,17 +149,14 @@ def main() -> int:
     progress = None if args.quiet else (lambda s: print(s, flush=True))
 
     print(BAR)
-    print(f"OPTERA PIPELINE  |  {len(paths)} files  |  mode={args.mode}  |  "
-          f"profile={args.profile}  |  {stamp}")
+    print(f"OPTERA PIPELINE  |  {len(paths)} files  |  mode={args.mode}  |  {stamp}")
     print(BAR)
     print(f"  baseline model : {BASELINE_MODEL}")
     print(f"  router model   : {ROUTER_MODEL}")
     for cls, pol in CLASS_POLICY.items():
-        esc = f" -> escalates to {pol.escalate_to}" if pol.escalate_to else ""
-        print(f"  {cls:15}: {pol.model} @ {pol.max_dim}px{esc}")
+        print(f"  {cls:15}: {pol.model} @ {pol.max_dim}px")
 
-    report: dict = {"run": stamp, "files": len(paths), "mode": args.mode,
-                    "profile": args.profile}
+    report: dict = {"run": stamp, "files": len(paths), "mode": args.mode}
 
     # ------------------------------------------------------------ baseline --
     if args.mode in ("baseline", "both"):
@@ -189,13 +177,12 @@ def main() -> int:
 
     # ----------------------------------------------------------- optimised --
     if args.mode in ("optimized", "both"):
-        print("\n>>> OPTIMISED: preflight -> route -> sized extraction -> validate/escalate")
+        print("\n>>> OPTIMISED: preflight -> route -> class-specific extraction -> validate")
         led = Ledger(out / f"ledger_optimized_{stamp}.jsonl", f"optimized_{stamp}")
         t0 = time.time()
         res = pipeline.run_optimized(
             paths, led, workers=args.workers, dedupe=not args.no_dedupe,
-            batch=args.batch,
-            allow_escalation=not args.no_escalation, progress=progress)
+            progress=progress)
         led.close()
         pipeline.write_results(res, out / f"results_optimized_{stamp}.json")
         summ = led.summary(n_docs=len(paths))

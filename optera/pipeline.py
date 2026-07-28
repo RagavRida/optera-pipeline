@@ -14,7 +14,6 @@ from typing import Any, Callable
 
 from . import extract as extract_mod
 from . import imaging, jsonio, preflight, prompts, router, schemas, validate
-from .batch_extract import extract_batch, BATCHABLE_CLASSES
 from .config import (BASELINE_JPEG_Q, BASELINE_MAX_DIM, BASELINE_MODEL,
                      ROUTER_MODEL)
 from .ledger import Ledger
@@ -28,13 +27,14 @@ def _finalise(env: dict, pf: PreflightResult | None, ledger: Ledger) -> dict:
     doc_id = env["doc_id"]
     rows = ledger.rows_for_doc(doc_id)
     env["provenance"]["cost_usd"] = round(
-        sum(ledger.share_for_doc(row, doc_id) for row in rows), 8)
+        sum(row.cost_usd for row in rows), 8)
     calls = []
     for row in rows:
-        usage = ledger.usage_share_for_doc(row, doc_id)
+        usage = {"in": row.input_tokens, "out": row.output_tokens,
+                 "cache_read": row.cache_read_tokens}
         calls.append({
             "stage": row.stage, "model": row.model, **usage,
-            "usd": round(ledger.share_for_doc(row, doc_id), 8),
+            "usd": round(row.cost_usd, 8),
         })
     env["provenance"]["calls"] = calls
     if pf is not None:
@@ -119,12 +119,9 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
 # and mutable shared state across thread boundaries.
 
 
-def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger,
-                 allow_escalation: bool) -> dict:
+def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger) -> dict:
     """Extract a single document (individual call). Returns the finalised envelope."""
-    env = extract_mod.extract(pf, rt.doc_class, ledger,
-                              allow_escalation=allow_escalation,
-                              subtype=rt.subtype)
+    env = extract_mod.extract(pf, rt.doc_class, ledger, subtype=rt.subtype)
     tag = f"{rt.doc_class}/{rt.subtype}" if rt.subtype else rt.doc_class
     env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
     if rt.note:
@@ -132,39 +129,15 @@ def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger,
     return _finalise(env, pf, ledger)
 
 
-def _extract_group_batched(group_items: list[tuple[int, PreflightResult, Any]],
-                           doc_class: str, subtype: str | None,
-                           ledger: Ledger, allow_escalation: bool,
-                           batch_size: int = 3) -> list[tuple[int, dict]]:
-    """Extract a group of same-class documents using batched API calls.
-
-    Returns a list of (original_index, envelope) pairs.
-    """
-    results: list[tuple[int, dict]] = []
-    for chunk_start in range(0, len(group_items), batch_size):
-        chunk = group_items[chunk_start:chunk_start + batch_size]
-        chunk_pfs = [x[1] for x in chunk]
-        envs = extract_batch(chunk_pfs, doc_class, ledger,
-                             subtype=subtype, allow_escalation=allow_escalation)
-        for (orig_idx, pf, rt), env in zip(chunk, envs):
-            tag = f"{doc_class}/{subtype}" if subtype else doc_class
-            env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
-            if rt.note:
-                env["provenance"]["stages"].append(f"router_note:{rt.note}")
-            results.append((orig_idx, _finalise(env, pf, ledger)))
-    return results
-
-
 def _extract_group_individual(group_items: list[tuple[int, PreflightResult, Any]],
-                              ledger: Ledger, allow_escalation: bool,
-                              workers: int) -> list[tuple[int, dict]]:
+                              ledger: Ledger, workers: int) -> list[tuple[int, dict]]:
     """Extract a group of documents with individual API calls (in parallel).
 
     Returns a list of (original_index, envelope) pairs.
     """
     def _do_one(item: tuple) -> tuple[int, dict]:
         orig_idx, pf, rt = item
-        env = _extract_one(pf, rt, ledger, allow_escalation)
+        env = _extract_one(pf, rt, ledger)
         return orig_idx, env
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -172,20 +145,9 @@ def _extract_group_individual(group_items: list[tuple[int, PreflightResult, Any]
 
 
 def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
-                  dedupe: bool = True, allow_escalation: bool = True,
-                  batch: bool = False,
+                  dedupe: bool = True,
                   progress: Callable[[str], None] | None = None) -> list[dict]:
-    """Stage 0 free gate -> stage 1 cheap router -> stage 2 sized extraction
-    -> stage 3 validation and targeted escalation.
-
-    batch=True enables the optional multi-image extractor:
-      - Multi-image extraction: up to 3 same-class docs per call for
-        meter_reading and vendor_bill (work_report excluded — too long)
-
-    It is opt-in because the published accuracy evidence predates it. A new
-    corpus must be scored with and without it before it can enter a production
-    default; a cheaper request that changes reading accuracy is not a win.
-    """
+    """Free preflight -> cheap router -> class-specific extraction -> validation."""
     pfs = preflight.run(sorted(paths), dedupe=dedupe)
     ledger.record("-", "preflight", "-", None,
                   note=f"screened={len(pfs)} passed={sum(1 for p in pfs if p.ok)}")
@@ -209,14 +171,8 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
         if progress:
             progress(f"  preflight {pf.doc_id}: {pf.reason} ($0)")
 
-    # ---- Stage 1: router (always individual for accuracy) ----
-    # Multi-image router batching was tried but caused misclassification of
-    # tyre-service bills and DEF invoices as work_reports at 384px thumbnail
-    # resolution — two documents were dropped. The router call costs ~$0.0006
-    # each and saving $0.011 total is not worth any routing error, since a
-    # wrong route silently drops or corrupts a real document. Individual calls
-    # are kept here; multi-image batching is applied only to extraction where
-    # the class is already known and the prompt is class-specific.
+    # Routing remains individual so each classification gets an independent,
+    # machine-readable refusal decision before extraction.
     with ThreadPoolExecutor(max_workers=workers) as pool:
         route_results = list(pool.map(
             lambda pf: router.classify(pf, ledger, model=ROUTER_MODEL), live))
@@ -242,40 +198,10 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
         else:
             to_extract.append((i, pf, rt))
 
-    if batch and to_extract:
-        # Group by (doc_class, subtype) for batched extraction.
-        from collections import defaultdict
-        groups: dict[tuple[str, str | None], list[tuple[int, PreflightResult, Any]]] = defaultdict(list)
-        for item in to_extract:
-            _, _pf, _rt = item
-            key = (_rt.doc_class, _rt.subtype)
-            groups[key].append(item)
-
-        for (doc_class, subtype), group_items in groups.items():
-            if doc_class in BATCHABLE_CLASSES and len(group_items) > 1:
-                logger.debug("batch extracting %d %s/%s documents",
-                             len(group_items), doc_class, subtype)
-                for idx, env in _extract_group_batched(
-                        group_items, doc_class, subtype, ledger, allow_escalation):
-                    if progress:
-                        esc = " (escalated)" if env["provenance"].get("escalated") else ""
-                        progress(f"  {env['doc_id']}: {doc_class} conf={env['confidence']}{esc} [batch]")
-                    result_slots[idx] = env
-            else:
-                for idx, env in _extract_group_individual(
-                        group_items, ledger, allow_escalation, workers):
-                    if progress:
-                        esc = " (escalated)" if env["provenance"].get("escalated") else ""
-                        progress(f"  {env['doc_id']}: {env['doc_class']} conf={env['confidence']}{esc}")
-                    result_slots[idx] = env
-    else:
-        # No batching: individual calls for everything.
-        for idx, env in _extract_group_individual(
-                to_extract, ledger, allow_escalation, workers):
-            if progress:
-                esc = " (escalated)" if env["provenance"].get("escalated") else ""
-                progress(f"  {env['doc_id']}: {env['doc_class']} conf={env['confidence']}{esc}")
-            result_slots[idx] = env
+    for idx, env in _extract_group_individual(to_extract, ledger, workers):
+        if progress:
+            progress(f"  {env['doc_id']}: {env['doc_class']} conf={env['confidence']}")
+        result_slots[idx] = env
 
     # Collect results in original order.
     for i in range(len(live)):

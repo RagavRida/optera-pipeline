@@ -1,19 +1,7 @@
 {
-  "_comment": "USD per 1,000,000 tokens. Edit here when vendor prices change - nothing else in the codebase hardcodes a price. cache_write/cache_read are multipliers applied to the input rate.",
-  "_cache_semantics": "Anthropic: cache writes bill at 1.25x input, cache reads at 0.10x input. OpenAI caches reads at 0.50x input and does not bill a write premium.",
+  "_comment": "USD per 1,000,000 tokens used for the committed 2026-07-28 OpenAI benchmark. Update this file before comparing a new run at changed prices.",
+  "_cache_semantics": "OpenAI reports cached prompt tokens separately. They are charged at the configured cache_read fraction of the input rate.",
   "models": {
-    "claude-opus-4-5-20251101": {
-      "provider": "anthropic", "input": 5.00, "output": 25.00,
-      "cache_write": 1.25, "cache_read": 0.10, "vision": true, "tier": 3
-    },
-    "claude-sonnet-4-5-20250929": {
-      "provider": "anthropic", "input": 3.00, "output": 15.00,
-      "cache_write": 1.25, "cache_read": 0.10, "vision": true, "tier": 2
-    },
-    "claude-haiku-4-5-20251001": {
-      "provider": "anthropic", "input": 1.00, "output": 5.00,
-      "cache_write": 1.25, "cache_read": 0.10, "vision": true, "tier": 1
-    },
     "gpt-4o": {
       "provider": "openai", "input": 2.50, "output": 10.00,
       "cache_write": 1.00, "cache_read": 0.50, "vision": true, "tier": 2
@@ -21,14 +9,6 @@
     "gpt-4o-mini": {
       "provider": "openai", "input": 0.15, "output": 0.60,
       "cache_write": 1.00, "cache_read": 0.50, "vision": true, "tier": 1
-    },
-    "gpt-5": {
-      "provider": "openai", "input": 1.25, "output": 10.00,
-      "cache_write": 1.00, "cache_read": 0.10, "vision": true, "tier": 3
-    },
-    "gpt-5-mini": {
-      "provider": "openai", "input": 0.25, "output": 2.00,
-      "cache_write": 1.00, "cache_read": 0.10, "vision": true, "tier": 1
     }
   }
 }

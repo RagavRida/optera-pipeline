@@ -1,8 +1,8 @@
 """Tolerant JSON recovery from model output.
 
 Models occasionally wrap JSON in a markdown fence, prepend a sentence, or get
-truncated by max_tokens mid-object. Re-calling the model to fix formatting costs
-real money, so we repair locally first and only escalate if repair fails.
+truncated by max_tokens mid-object. Local recovery preserves usable output
+without spending another model call.
 """
 from __future__ import annotations
 
@@ -50,9 +50,8 @@ def _balance(s: str) -> str:
 def parse(text: str) -> tuple[Any | None, str]:
     """Return a JSON value and a note describing any local repair.
 
-    Extraction normally returns objects, while multi-image extraction returns a
-    top-level array. Keeping recovery generic lets a truncated batch fall back
-    to valid slots instead of needlessly re-running the entire batch.
+    Keeping recovery generic also makes the parser safe for any future
+    array-shaped response.
     """
     if not text or not text.strip():
         return None, "empty_response"

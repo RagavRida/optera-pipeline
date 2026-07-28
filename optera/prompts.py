@@ -1,24 +1,8 @@
-"""Prompt text for every stage.
-
-Two properties matter here and they pull against each other:
-
-1. Prompt tokens are paid on every single call, so the extraction prompt is the
-   most repeated cost in the system and every clause has to earn its place.
-2. Anthropic will only cache a prefix above a minimum length (2048 tokens for
-   Haiku, 1024 for Sonnet/Opus). Trim a prompt below that floor and caching
-   silently stops applying.
-
-So "make the prompt shorter" is not unconditionally correct. The shared
-RULEBOOK below is the cacheable prefix; per-class specs are appended after it.
-"""
+"""Compact, shared prompt text for routing and extraction."""
 from __future__ import annotations
 
-from . import fewshots, schemas
+from . import schemas
 
-# --------------------------------------------------------------------------
-# Shared rulebook. Identical bytes on every extraction call, which is what
-# makes it a cache prefix rather than just boilerplate.
-# --------------------------------------------------------------------------
 _RULEBOOK_CORE = """You are an extraction engine for Optera, processing phone photographs of \
 operational paperwork from Indian bus-fleet operators. Images arrive over WhatsApp: \
 skewed, shadowed, finger-occluded, multi-lingual, and frequently handwritten.
@@ -51,34 +35,7 @@ REFUSAL
   manufacture one. Refuse it as described in the task section below.
 """
 
-# --------------------------------------------------------------------------
-# RULEBOOK variants:
-#
-# RULEBOOK      — core rules only (~400 tokens). Used when caching is
-#                 not beneficial (e.g. single-shot calls, short jobs).
-#
-# RICH_RULEBOOK — core + all few-shot examples (comfortably above 2048
-#                 approximate tokens). This exceeds both the Haiku (2048)
-#                 and Sonnet/Opus (1024)
-#                 prompt-caching floors, so the system prompt is cached
-#                 after the first call. The ~$0.013 cache-write cost is
-#                 recovered after ~2 subsequent reads.
-#
-#                 The examples also directly improve accuracy on the three
-#                 failure modes they demonstrate: decimal odometers, blank
-#                 checklist rows, and the DEF-label refusal trap.
-# --------------------------------------------------------------------------
 RULEBOOK = _RULEBOOK_CORE
-
-# Lazily constructed so fewshots.py is imported only when needed.
-_RICH_RULEBOOK: str | None = None
-
-
-def rich_rulebook() -> str:
-    global _RICH_RULEBOOK
-    if _RICH_RULEBOOK is None:
-        _RICH_RULEBOOK = _RULEBOOK_CORE + "\n\n" + fewshots.all_examples()
-    return _RICH_RULEBOOK
 
 
 def classification_prompt() -> str:

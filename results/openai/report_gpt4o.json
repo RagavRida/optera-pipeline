@@ -2,7 +2,6 @@
   "run": "20260728T105158Z",
   "files": 47,
   "mode": "both",
-  "profile": "accurate",
   "baseline": {
     "cost": {
       "run": "baseline_20260728T105158Z",

@@ -92,16 +92,6 @@ def encode(im: Image.Image, max_dim: int, quality: int = 80) -> tuple[str, str, 
     return "image/jpeg", base64.b64encode(data).decode(), len(data)
 
 
-def estimate_image_tokens(width: int, height: int, max_dim: int) -> int:
-    """Anthropic's documented approximation: tokens ~= (w*h)/750 after scaling.
-
-    Used only for *planning* a resolution choice. Reported costs always come
-    from API-returned counts, never from this function.
-    """
-    scale = min(1.0, max_dim / max(width, height))
-    return int((width * scale) * (height * scale) / 750)
-
-
 # ------------------------------------------------------------ quality gates --
 def dhash(im: Image.Image, size: int = 8) -> int:
     """Difference hash - robust to the re-encoding WhatsApp applies on forward.

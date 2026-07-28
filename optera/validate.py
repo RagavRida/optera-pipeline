@@ -1,14 +1,4 @@
-"""Stage 3 - deterministic validation.
-
-This is where cheap models get made safe. Rather than trusting a small model's
-self-reported confidence (which is systematically overconfident), we check its
-output against facts we can verify for free: does the arithmetic close, is the
-date real, did it emit a placeholder where it should have emitted null.
-
-Validation failures are the escalation trigger. That is what makes the optimised
-path defensible: we do not merely hope the cheap model was right, we test it,
-and we pay for a stronger model precisely on the documents that fail.
-"""
+"""Stage 3 - deterministic validation of model output at zero token cost."""
 from __future__ import annotations
 
 import datetime as dt
@@ -133,10 +123,8 @@ def _validate_work_report(d: dict, rep: ValidationReport) -> None:
         rep.add("entries_not_a_list", 0.5)
         return
     if not entries:
-        # Weighted BELOW the hard-fail line on purpose. Genuinely near-blank
-        # ruled forms do occur in this corpus, and escalating every one of them
-        # to the largest model was buying nothing. If the model is also unsure,
-        # its own low confidence still triggers the escalation.
+        # A near-blank ruled form can be valid, so this is a warning rather than
+        # a hard failure.
         rep.add("zero_entries_on_work_report", 0.2)
         return
 
@@ -149,11 +137,8 @@ def _validate_work_report(d: dict, rep: ValidationReport) -> None:
         if not isinstance(work, str) or not work.strip():
             empty += 1
     if empty:
-        # Proportional, and quiet below a quarter of the page. A single blank
-        # work_done in 23 rows used to drag effective confidence under the
-        # escalation threshold and buy a full second pass on the largest model -
-        # 46% of work reports escalated, for 2.2 points of accuracy across the
-        # whole corpus. Escalation has to be rare to be worth anything.
+        # Proportional and quiet below a quarter of the page: a few blank cells
+        # should not overwhelm an otherwise useful record.
         frac = empty / max(len(entries), 1)
         if frac >= 0.5:
             rep.add(f"entries_missing_work_done:{empty}/{len(entries)}", 0.3)
@@ -235,13 +220,5 @@ def _validate_meter(d: dict, rep: ValidationReport) -> None:
 
 
 def effective_confidence(model_confidence: float, rep: ValidationReport) -> float:
-    """Combine self-reported confidence with what we could verify ourselves.
-
-    Deliberately asymmetric: validation can only ever lower confidence. A model
-    insisting it is certain about a bill whose arithmetic does not close should
-    not be able to talk its way out of an escalation.
-    """
-    # Capped subtraction rather than multiplication. Multiplying compounded
-    # every minor nit into a below-threshold score and made escalation fire on
-    # documents that were basically fine.
+    """Lower model confidence when a free validation check finds an issue."""
     return round(max(0.0, min(1.0, model_confidence) - min(rep.severity, 0.6)), 3)

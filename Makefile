@@ -1,4 +1,4 @@
-.PHONY: install install-dev run optimized baseline cheap verify verify-anthropic sweep variance test test-cov lint clean
+.PHONY: install install-dev run optimized baseline verify test test-cov lint clean
 
 install:
 	python3 -m pip install -r requirements.txt
@@ -16,24 +16,10 @@ optimized:
 baseline:
 	python3 run.py --mode baseline
 
-cheap:
-	python3 run.py --mode optimized --profile cheap
-
 # Recompute the published cost/accuracy figures from committed artifacts.
 # No images or model API credential required; this is not live inference.
 verify:
 	python3 scripts/verify_evidence.py
-
-verify-anthropic:
-	python3 scripts/verify_evidence.py --evidence anthropic
-
-# Evidence behind the per-class policy table in optera/config.py
-sweep:
-	python3 scripts/sweep_resolution.py
-
-# How much does accuracy move when nothing changes? (noise floor)
-variance:
-	python3 scripts/variance.py
 
 # ---- Testing & quality ----
 test:
