@@ -1,4 +1,4 @@
-.PHONY: install install-dev run optimized baseline verify test test-cov lint clean
+.PHONY: install install-dev run optimized baseline batch-help verify test test-cov lint clean
 
 install:
 	python3 -m pip install -r requirements.txt
@@ -15,6 +15,9 @@ optimized:
 
 baseline:
 	python3 run.py --mode baseline
+
+batch-help:
+	python3 scripts/batch_requests.py --help
 
 # Recompute the published cost/accuracy figures from committed artifacts.
 # No images or model API credential required; this is not live inference.

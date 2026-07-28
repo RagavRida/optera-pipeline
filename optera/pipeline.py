@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from . import extract as extract_mod
+from .cache import ResultCache
 from . import imaging, jsonio, preflight, prompts, router, schemas, validate
 from .config import (BASELINE_JPEG_Q, BASELINE_MAX_DIM, BASELINE_MODEL,
                      ROUTER_MODEL)
@@ -119,9 +120,11 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
 # and mutable shared state across thread boundaries.
 
 
-def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger) -> dict:
+def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger,
+                 targeted_reread: bool) -> dict:
     """Extract a single document (individual call). Returns the finalised envelope."""
-    env = extract_mod.extract(pf, rt.doc_class, ledger, subtype=rt.subtype)
+    env = extract_mod.extract(pf, rt.doc_class, ledger, subtype=rt.subtype,
+                              targeted_reread=targeted_reread)
     tag = f"{rt.doc_class}/{rt.subtype}" if rt.subtype else rt.doc_class
     env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
     if rt.note:
@@ -130,14 +133,15 @@ def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger) -> dict:
 
 
 def _extract_group_individual(group_items: list[tuple[int, PreflightResult, Any]],
-                              ledger: Ledger, workers: int) -> list[tuple[int, dict]]:
+                              ledger: Ledger, workers: int,
+                              targeted_reread: bool) -> list[tuple[int, dict]]:
     """Extract a group of documents with individual API calls (in parallel).
 
     Returns a list of (original_index, envelope) pairs.
     """
     def _do_one(item: tuple) -> tuple[int, dict]:
         orig_idx, pf, rt = item
-        env = _extract_one(pf, rt, ledger)
+        env = _extract_one(pf, rt, ledger, targeted_reread)
         return orig_idx, env
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
@@ -146,6 +150,8 @@ def _extract_group_individual(group_items: list[tuple[int, PreflightResult, Any]
 
 def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
                   dedupe: bool = True,
+                  cache: ResultCache | None = None,
+                  targeted_reread: bool = False,
                   progress: Callable[[str], None] | None = None) -> list[dict]:
     """Free preflight -> cheap router -> class-specific extraction -> validation."""
     pfs = preflight.run(sorted(paths), dedupe=dedupe)
@@ -159,6 +165,14 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
 
     for pf in pfs:
         if pf.ok:
+            cached = cache.get(pf) if cache else None
+            if cached is not None:
+                ledger.record(pf.doc_id, "cache", "-", None,
+                              note=f"exact_sha256:{cache.fingerprint}")
+                results.append(_finalise(cached, pf, ledger))
+                if progress:
+                    progress(f"  cache {pf.doc_id}: exact validated hit ($0)")
+                continue
             live.append(pf)
             continue
         env = schemas.refusal(pf.doc_id, pf.reason,
@@ -194,13 +208,19 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
             logger.info("%s: refused at router (conf=%.2f)", pf.doc_id, rt.confidence)
             if progress:
                 progress(f"  {pf.doc_id}: refused at router")
-            result_slots[i] = _finalise(env, pf, ledger)
+            final = _finalise(env, pf, ledger)
+            if cache:
+                cache.put(pf, final)
+            result_slots[i] = final
         else:
             to_extract.append((i, pf, rt))
 
-    for idx, env in _extract_group_individual(to_extract, ledger, workers):
+    for idx, env in _extract_group_individual(to_extract, ledger, workers, targeted_reread):
         if progress:
             progress(f"  {env['doc_id']}: {env['doc_class']} conf={env['confidence']}")
+        pf = live[idx]
+        if cache:
+            cache.put(pf, env)
         result_slots[idx] = env
 
     # Collect results in original order.

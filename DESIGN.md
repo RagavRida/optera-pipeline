@@ -49,9 +49,24 @@ recomputes this summary from `results/openai/` without an API key or network.
   tokens in both benchmark ledgers; the ledger prices those separately rather
   than charging them as full-price input.
 
-I removed unmeasured batch extraction and cross-provider experiments from the
-submission. They were not necessary for the verified OpenAI claim, and a
-cheaper request shape is not an optimization until it is re-scored for accuracy.
+## Additional cost controls now implemented
+
+**Exact-result cache.** A content-addressed cache stores only high-confidence,
+validated outputs. Its key includes the raw image SHA-256 plus a fingerprint of
+the active model roles, prompts and schemas, so it cannot replay a stale result
+after a pipeline change. Near-duplicates are never cache hits. Repeated WhatsApp
+uploads can therefore be served at $0 without reducing inference accuracy.
+
+**OpenAI Batch API workflow.** `scripts/batch_requests.py` builds independent
+JSONL requests, submits durable batch state, and collects completed output. The
+optimized path is correctly staged: router first, then extractor requests for
+only the routed documents. The current jobs are not a headline claim until they
+complete and are scored against the same 91-field gold set.
+
+**Targeted crop re-read.** `--targeted-reread` is off by default. For a failed
+GSTIN or meter arithmetic check it reads a relevant crop, merges only non-null
+candidate fields, and accepts the merge only when deterministic validation gets
+strictly better. It needs a labelled rerun before becoming a default.
 
 ## Where it breaks
 
@@ -76,5 +91,5 @@ cheaper request shape is not an optimization until it is re-scored for accuracy.
 3. Resolve vehicle identifiers against a customer fleet vocabulary and send
    unmatched values to review.
 4. Split invoice seller and buyer blocks spatially before assigning GSTIN.
-5. Measure OpenAI Batch API and multi-image requests on labelled data; ship
-   them only if cost falls with the same or better accuracy.
+5. Complete and score the queued OpenAI Batch API run, then promote it only if
+   its cost falls with the same or better accuracy.

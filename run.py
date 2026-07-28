@@ -38,6 +38,7 @@ def _load_dotenv(path: Path) -> None:
 _load_dotenv(ROOT / ".env")
 
 from optera import pipeline, score as scoring  # noqa: E402
+from optera.cache import ResultCache  # noqa: E402
 from optera.config import BASELINE_MODEL, CLASS_POLICY, ROUTER_MODEL  # noqa: E402
 from optera.ledger import Ledger  # noqa: E402
 
@@ -102,6 +103,12 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0, help="process only the first N files")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--no-dedupe", action="store_true")
+    ap.add_argument("--cache-dir", default=".optera-cache",
+                    help="persistent exact-image result cache for optimized runs")
+    ap.add_argument("--no-cache", action="store_true",
+                    help="disable result-cache reads and writes (best for fresh benchmarks)")
+    ap.add_argument("--targeted-reread", action="store_true",
+                    help="opt in to validation-gated crop re-reads; evaluate before production")
     ap.add_argument("--no-score", action="store_true")
     ap.add_argument("--out", default="out")
     ap.add_argument("--quiet", action="store_true")
@@ -157,6 +164,9 @@ def main() -> int:
         print(f"  {cls:15}: {pol.model} @ {pol.max_dim}px")
 
     report: dict = {"run": stamp, "files": len(paths), "mode": args.mode}
+    cache = None if args.no_cache else ResultCache(Path(args.cache_dir))
+    if cache and args.mode in ("optimized", "both"):
+        print(f"  result cache   : {cache.root} (fingerprint {cache.fingerprint})")
 
     # ------------------------------------------------------------ baseline --
     if args.mode in ("baseline", "both"):
@@ -182,6 +192,8 @@ def main() -> int:
         t0 = time.time()
         res = pipeline.run_optimized(
             paths, led, workers=args.workers, dedupe=not args.no_dedupe,
+            cache=cache,
+            targeted_reread=args.targeted_reread,
             progress=progress)
         led.close()
         pipeline.write_results(res, out / f"results_optimized_{stamp}.json")

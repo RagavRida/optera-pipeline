@@ -47,7 +47,7 @@ def _one_pass(pf: PreflightResult, doc_class: str, model: str, max_dim: int,
 
 
 def extract(pf: PreflightResult, doc_class: str, ledger: Ledger,
-            subtype: str | None = None) -> dict[str, Any]:
+            subtype: str | None = None, targeted_reread: bool = False) -> dict[str, Any]:
     env = schemas.empty_envelope(pf.doc_id)
     env["quality_flags"] = list(pf.warnings)
 
@@ -96,5 +96,14 @@ def extract(pf: PreflightResult, doc_class: str, ledger: Ledger,
     env["provenance"]["stages"].append(f"extract:{pol.model}@{max_dim}px")
     if note:
         env["provenance"]["stages"].append(f"json:{note}")
+
+    if targeted_reread:
+        from .reread import reread_if_needed
+        data, rep, accepted = reread_if_needed(pf, doc_class, data, rep, ledger)
+        if accepted:
+            env["data"] = data
+            env["validation"] = rep.to_json()
+            env["confidence"] = validate.effective_confidence(model_conf, rep)
+            env["provenance"]["stages"].append("reread_crop:accepted_validation_improvement")
 
     return env
