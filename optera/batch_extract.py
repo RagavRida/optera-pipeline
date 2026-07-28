@@ -2,8 +2,8 @@
 
 Works on the same principle as batch_router: shared prompt overhead paid once.
 For extraction the saving is smaller relative to image tokens (extraction images
-are larger than router thumbnails), but the system prompt is also larger
-(~2100 tokens for rich_rulebook), making the per-call overhead more significant.
+are larger than router thumbnails), but the system prompt is also larger than
+the cache floor when rich_rulebook() is used, making shared overhead significant.
 
 Grouping constraints:
 - Same doc_class and same subtype only. Different schemas cannot be mixed.
@@ -105,8 +105,8 @@ def extract_batch(pfs: list[PreflightResult], doc_class: str, ledger: Ledger,
             cache_system=should_cache,
             temperature=0.0,
         )
-        ledger.record(
-            pfs[0].doc_id, "extract_batch", pol.model, resp.usage,
+        ledger.record_batch(
+            [pf.doc_id for pf in pfs], "extract_batch", pol.model, resp.usage,
             image_px=str(encoded[0][3]), image_kb=round(total_kb, 1),
             note=f"{doc_class}×{len(pfs)}",
         )

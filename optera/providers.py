@@ -10,6 +10,7 @@ this codebase estimates tokens; estimated tokens make cost claims unfalsifiable.
 from __future__ import annotations
 
 import json
+import logging
 import os
 import random
 import time
@@ -17,11 +18,18 @@ import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
 
+logger = logging.getLogger(__name__)
+
 from .config import model_info
 
 # urllib's default User-Agent is blocked by the Cloudflare edge in front of some
 # gateways (HTTP 1010). A conventional UA avoids a confusing hard failure.
 _UA = "optera-pipeline/1.0 (+https://github.com/) curl/8.0.1"
+
+# Configurable retry/timeout defaults for production environments.
+API_TIMEOUT = int(os.environ.get("OPTERA_API_TIMEOUT", "240"))
+API_RETRIES = int(os.environ.get("OPTERA_API_RETRIES", "5"))
+API_MAX_BACKOFF = int(os.environ.get("OPTERA_API_MAX_BACKOFF", "20"))
 
 
 @dataclass
@@ -54,19 +62,24 @@ class ProviderError(RuntimeError):
     pass
 
 
-def _post(url: str, payload: dict, headers: dict, timeout: int = 240) -> dict:
+def _post(url: str, payload: dict, headers: dict, timeout: int | None = None) -> dict:
+    if timeout is None:
+        timeout = API_TIMEOUT
     body = json.dumps(payload).encode()
     req = urllib.request.Request(url, data=body, headers={"user-agent": _UA, **headers})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return json.loads(resp.read())
 
 
-def _post_retry(url: str, payload: dict, headers: dict, attempts: int = 5) -> dict:
+def _post_retry(url: str, payload: dict, headers: dict,
+                attempts: int | None = None) -> dict:
     """Retry on 429/5xx with jittered exponential backoff.
 
     Overload responses are the norm when fanning out dozens of images
     concurrently; without this the cheap path looks unreliable rather than cheap.
     """
+    if attempts is None:
+        attempts = API_RETRIES
     last = None
     for i in range(attempts):
         try:
@@ -75,12 +88,18 @@ def _post_retry(url: str, payload: dict, headers: dict, attempts: int = 5) -> di
             detail = e.read().decode(errors="replace")[:400]
             last = ProviderError(f"HTTP {e.code}: {detail}")
             if e.code in (408, 409, 429, 500, 502, 503, 504, 529):
-                time.sleep(min(2 ** i, 20) + random.random() * 1.5)
+                wait = min(2 ** i, API_MAX_BACKOFF) + random.random() * 1.5
+                logger.warning("HTTP %d from %s, retry %d/%d in %.1fs",
+                               e.code, url.split("/")[-1], i + 1, attempts, wait)
+                time.sleep(wait)
                 continue
             raise last
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
             last = ProviderError(f"{type(e).__name__}: {e}")
-            time.sleep(min(2 ** i, 20) + random.random() * 1.5)
+            wait = min(2 ** i, API_MAX_BACKOFF) + random.random() * 1.5
+            logger.warning("%s on %s, retry %d/%d in %.1fs",
+                           type(e).__name__, url.split("/")[-1], i + 1, attempts, wait)
+            time.sleep(wait)
     raise last or ProviderError("exhausted retries")
 
 

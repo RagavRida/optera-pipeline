@@ -36,6 +36,10 @@ class LedgerRow:
     image_px: str = ""
     image_kb: float = 0.0
     note: str = ""
+    # A multi-image request is still represented by exactly one ledger row so
+    # API-call counts remain truthful. The participating document ids allow
+    # result envelopes to receive an explicit equal-share attribution.
+    batch_doc_ids: list[str] = field(default_factory=list)
 
 
 class Ledger:
@@ -48,7 +52,8 @@ class Ledger:
         self._fh = self.path.open("a", encoding="utf-8")
 
     def record(self, doc_id: str, stage: str, model: str, usage: Usage | None = None,
-               image_px: str = "", image_kb: float = 0.0, note: str = "") -> LedgerRow:
+               image_px: str = "", image_kb: float = 0.0, note: str = "",
+               batch_doc_ids: list[str] | None = None) -> LedgerRow:
         u = usage or Usage()
         row = LedgerRow(
             run=self.run, doc_id=doc_id, stage=stage, model=model,
@@ -59,6 +64,7 @@ class Ledger:
                       if model and model != "-" else 0.0),
             latency_s=round(u.latency_s, 3), image_px=image_px,
             image_kb=round(image_kb, 1), note=note,
+            batch_doc_ids=list(batch_doc_ids or []),
         )
         with self._lock:
             self.rows.append(row)
@@ -66,18 +72,68 @@ class Ledger:
             self._fh.flush()
         return row
 
+    def record_batch(self, doc_ids: list[str], stage: str, model: str,
+                     usage: Usage, image_px: str = "", image_kb: float = 0.0,
+                     note: str = "") -> LedgerRow:
+        """Record one API call shared by multiple input documents.
+
+        The underlying token counts are the provider's actual request-level
+        counts. Per-document output provenance uses a transparent equal share;
+        we do not fabricate image-token estimates for individual positions.
+        """
+        if not doc_ids:
+            raise ValueError("record_batch requires at least one document id")
+        return self.record(
+            doc_id=f"batch:{doc_ids[0]}", stage=stage, model=model, usage=usage,
+            image_px=image_px, image_kb=image_kb, note=note,
+            batch_doc_ids=doc_ids,
+        )
+
+    def rows_for_doc(self, doc_id: str) -> list[LedgerRow]:
+        """Rows directly or jointly attributable to ``doc_id``."""
+        with self._lock:
+            return [row for row in self.rows
+                    if row.doc_id == doc_id or doc_id in row.batch_doc_ids]
+
+    @staticmethod
+    def share_for_doc(row: LedgerRow, doc_id: str) -> float:
+        """Cost attribution for one document, preserving the ledger total."""
+        if doc_id in row.batch_doc_ids:
+            return row.cost_usd / len(row.batch_doc_ids)
+        return row.cost_usd
+
+    @staticmethod
+    def usage_share_for_doc(row: LedgerRow, doc_id: str) -> dict[str, float | int]:
+        """Request usage annotated with an equal allocation for batch members."""
+        n = len(row.batch_doc_ids) if doc_id in row.batch_doc_ids else 1
+        return {
+            "in": row.input_tokens / n,
+            "out": row.output_tokens / n,
+            "cache_read": row.cache_read_tokens / n,
+            "shared_by": n,
+        }
+
     def close(self) -> None:
         try:
             self._fh.close()
         except Exception:
             pass
 
+    def __enter__(self) -> "Ledger":
+        return self
+
+    def __exit__(self, *exc: object) -> None:
+        self.close()
+
     # ------------------------------------------------------------ reporting --
     def total_cost(self) -> float:
         return sum(r.cost_usd for r in self.rows)
 
     def docs(self) -> set[str]:
-        return {r.doc_id for r in self.rows}
+        docs: set[str] = set()
+        for row in self.rows:
+            docs.update(row.batch_doc_ids or [row.doc_id])
+        return docs
 
     def summary(self, n_docs: int | None = None) -> dict[str, Any]:
         n = n_docs if n_docs is not None else len(self.docs())

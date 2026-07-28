@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import sys
 import time
@@ -102,15 +103,38 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--no-dedupe", action="store_true")
     ap.add_argument("--no-escalation", action="store_true")
-    ap.add_argument("--no-batch", action="store_true",
-                    help="disable multi-image batching and rich-rulebook caching")
+    ap.add_argument("--batch", action="store_true",
+                    help="opt in to experimental multi-image extraction; score it before production")
     ap.add_argument("--no-score", action="store_true")
     ap.add_argument("--out", default="out")
     ap.add_argument("--profile", choices=["cheap", "balanced", "accurate"],
                     default="accurate",
                     help="cost/accuracy operating point (see DESIGN.md)")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--log-level", default="WARNING",
+                    choices=["DEBUG", "INFO", "WARNING", "ERROR"],
+                    help="logging verbosity (default: WARNING)")
+    ap.add_argument("--log-format", default="text", choices=["text", "json"],
+                    help="log output format (default: text)")
     args = ap.parse_args()
+
+    # Configure logging before anything else runs.
+    level = getattr(logging, args.log_level)
+    if args.log_format == "json":
+        class _JsonFormatter(logging.Formatter):
+            def format(self, record: logging.LogRecord) -> str:
+                return json.dumps({
+                    "ts": self.formatTime(record), "level": record.levelname,
+                    "logger": record.name, "msg": record.getMessage(),
+                }, ensure_ascii=False)
+        handler = logging.StreamHandler(sys.stderr)
+        handler.setFormatter(_JsonFormatter())
+    else:
+        handler = logging.StreamHandler(sys.stderr)
+        handler.setFormatter(logging.Formatter(
+            "%(asctime)s %(levelname)-7s %(name)s  %(message)s",
+            datefmt="%H:%M:%S"))
+    logging.basicConfig(level=level, handlers=[handler])
 
     from optera.config import apply_profile
     apply_profile(args.profile)
@@ -170,7 +194,7 @@ def main() -> int:
         t0 = time.time()
         res = pipeline.run_optimized(
             paths, led, workers=args.workers, dedupe=not args.no_dedupe,
-            batch=not args.no_batch,
+            batch=args.batch,
             allow_escalation=not args.no_escalation, progress=progress)
         led.close()
         pipeline.write_results(res, out / f"results_optimized_{stamp}.json")

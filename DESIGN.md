@@ -6,8 +6,9 @@ What I built, what the numbers actually are, where it breaks, and what I'd do ne
 
 ## 1. The headline
 
-Measured on all 47 starter images. Every figure below is a sum over
-`out/ledger_*.jsonl`, written call-by-call from API-reported token counts.
+Measured on all 47 starter images. Every figure below is a sum over the
+committed `results/ledger_*.jsonl` files, written call-by-call from
+API-reported token counts. New runs produce equivalent artifacts in `out/`.
 Nothing is estimated.
 
 | | naive baseline | optimised (default) |
@@ -227,11 +228,14 @@ differences under ~1 point overall are not resolved by this gold set, and
 work-report differences under ~3 points are not either. Two "regressions" I
 initially attributed to policy turned out to be same-config variance.
 
-**Batching not measured.** The gateway I ran against does not forward
-`/v1/messages/batches`, so the standard 50% batch discount is **not** in any
-number here. For a nightly WhatsApp backlog it applies cleanly and would take
-$0.0197 → roughly $0.010/doc, but I am not going to claim a discount I could
-not measure.
+**Batching not measured.** The committed result set predates the optional
+multi-image extractor, and the gateway I ran against does not forward
+`/v1/messages/batches`; neither multi-image savings nor the standard 50% Batch
+API discount is in any headline number. The code records shared-call costs
+correctly and exposes it through `--batch`, but it stays off by default until a
+labelled rerun proves it has not changed accuracy. I would expect a nightly
+Batch API workload to be materially cheaper, but I am not going to turn that
+expectation into a result.
 
 **Cost of building this.** Roughly $12 of inference across development,
 sweeps, ablations and final runs — about 600 API calls.

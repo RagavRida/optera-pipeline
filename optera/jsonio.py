@@ -19,7 +19,7 @@ def _balance(s: str) -> str:
     A response cut off by max_tokens is usually 95% good data; discarding it
     means paying twice for the same document.
     """
-    out, depth_obj, depth_arr, in_str, esc = [], 0, 0, False, False
+    out, stack, in_str, esc = [], [], False, False
     for ch in s:
         out.append(ch)
         if esc:
@@ -31,22 +31,29 @@ def _balance(s: str) -> str:
         if ch == '"':
             in_str = not in_str
         elif not in_str:
-            if ch == "{":
-                depth_obj += 1
-            elif ch == "}":
-                depth_obj -= 1
-            elif ch == "[":
-                depth_arr += 1
-            elif ch == "]":
-                depth_arr -= 1
+            if ch in "{[":
+                stack.append(ch)
+            elif ch == "}" and stack and stack[-1] == "{":
+                stack.pop()
+            elif ch == "]" and stack and stack[-1] == "[":
+                stack.pop()
     if in_str:
         out.append('"')
     tail = "".join(out).rstrip().rstrip(",")
-    return tail + "]" * max(depth_arr, 0) + "}" * max(depth_obj, 0)
+    # Brackets must close in *reverse nesting order*. Counting objects and
+    # arrays independently produces invalid JSON for a common truncation such
+    # as {"entries":[{"work_done":"brake — it needs }]} rather than ]}}.
+    closing = "".join("}" if opening == "{" else "]" for opening in reversed(stack))
+    return tail + closing
 
 
-def parse(text: str) -> tuple[dict[str, Any] | None, str]:
-    """Return (object, note). note describes any repair that was applied."""
+def parse(text: str) -> tuple[Any | None, str]:
+    """Return a JSON value and a note describing any local repair.
+
+    Extraction normally returns objects, while multi-image extraction returns a
+    top-level array. Keeping recovery generic lets a truncated batch fall back
+    to valid slots instead of needlessly re-running the entire batch.
+    """
     if not text or not text.strip():
         return None, "empty_response"
     raw = text.strip()
@@ -63,17 +70,18 @@ def parse(text: str) -> tuple[dict[str, Any] | None, str]:
         except json.JSONDecodeError:
             raw = m.group(1).strip()
 
-    start = raw.find("{")
-    if start == -1:
+    starts = [idx for idx in (raw.find("{"), raw.find("[")) if idx >= 0]
+    if not starts:
         return None, "no_json_object"
-    candidate = raw[start:]
+    candidate = raw[min(starts):]
 
-    end = candidate.rfind("}")
-    if end != -1:
-        try:
-            return json.loads(candidate[: end + 1]), "trimmed"
-        except json.JSONDecodeError:
-            pass
+    # raw_decode accepts an otherwise-valid JSON prefix, so prose after the
+    # object (a surprisingly common model habit) does not poison recovery.
+    try:
+        obj, _end = json.JSONDecoder().raw_decode(candidate)
+        return obj, "trimmed"
+    except json.JSONDecodeError:
+        pass
 
     try:
         return json.loads(_balance(candidate)), "repaired_truncated"

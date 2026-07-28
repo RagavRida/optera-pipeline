@@ -7,29 +7,36 @@ calls get made, to which models, at what resolution.
 from __future__ import annotations
 
 import json
+import logging
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Callable
 
 from . import extract as extract_mod
 from . import imaging, jsonio, preflight, prompts, router, schemas, validate
-from .batch_router import classify_batch
+from .batch_extract import extract_batch, BATCHABLE_CLASSES
 from .config import (BASELINE_JPEG_Q, BASELINE_MAX_DIM, BASELINE_MODEL,
                      ROUTER_MODEL)
 from .ledger import Ledger
 from .preflight import PreflightResult
 
+logger = logging.getLogger(__name__)
+
 
 def _finalise(env: dict, pf: PreflightResult | None, ledger: Ledger) -> dict:
     """Attach the per-document cost actually recorded in the ledger."""
-    rows = [r for r in ledger.rows if r.doc_id == env["doc_id"]]
-    env["provenance"]["cost_usd"] = round(sum(r.cost_usd for r in rows), 8)
-    env["provenance"]["calls"] = [
-        {"stage": r.stage, "model": r.model, "in": r.input_tokens,
-         "out": r.output_tokens, "cache_read": r.cache_read_tokens,
-         "usd": round(r.cost_usd, 8)} for r in rows
-    ]
+    doc_id = env["doc_id"]
+    rows = ledger.rows_for_doc(doc_id)
+    env["provenance"]["cost_usd"] = round(
+        sum(ledger.share_for_doc(row, doc_id) for row in rows), 8)
+    calls = []
+    for row in rows:
+        usage = ledger.usage_share_for_doc(row, doc_id)
+        calls.append({
+            "stage": row.stage, "model": row.model, **usage,
+            "usd": round(ledger.share_for_doc(row, doc_id), 8),
+        })
+    env["provenance"]["calls"] = calls
     if pf is not None:
         env["preflight"] = pf.to_json()
     return env
@@ -56,6 +63,7 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
             env["status"] = "error"
             env["validation"] = {"passed": False,
                                  "issues": [f"undecodable:{type(exc).__name__}"], "severity": 1.0}
+            logger.warning("baseline %s: undecodable: %s", doc_id, exc)
             if progress:
                 progress(f"  baseline {doc_id}: undecodable")
             return _finalise(env, None, ledger)
@@ -71,6 +79,7 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
         if obj is None:
             env["status"] = "error"
             env["validation"] = {"passed": False, "issues": [f"parse_failed:{note}"], "severity": 1.0}
+            logger.warning("baseline %s: parse_failed: %s", doc_id, note)
             if progress:
                 progress(f"  baseline {doc_id}: parse_failed")
             return _finalise(env, None, ledger)
@@ -81,6 +90,7 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
             out = schemas.refusal(doc_id, ref.get("reason", "not_a_document"),
                                   ref.get("observed", ""), doc_class=cls,
                                   confidence=float(obj.get("confidence", 0.8) or 0.8))
+            logger.info("baseline %s: refused", doc_id)
             if progress:
                 progress(f"  baseline {doc_id}: refused")
             return _finalise(out, None, ledger)
@@ -95,6 +105,7 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
                     "confidence": float(obj.get("confidence", 0.5) or 0.5),
                     "data": data, "validation": rep.to_json()})
         env["provenance"]["stages"].append(f"baseline:{BASELINE_MODEL}@{BASELINE_MAX_DIM}px")
+        logger.info("baseline %s: %s", doc_id, cls)
         if progress:
             progress(f"  baseline {doc_id}: {cls}")
         return _finalise(env, None, ledger)
@@ -104,25 +115,82 @@ def run_baseline(paths: list[Path], ledger: Ledger, workers: int = 4,
 
 
 # -------------------------------------------------------------- optimised --
+# Helper functions extracted from run_optimized to avoid deeply nested closures
+# and mutable shared state across thread boundaries.
+
+
+def _extract_one(pf: PreflightResult, rt: Any, ledger: Ledger,
+                 allow_escalation: bool) -> dict:
+    """Extract a single document (individual call). Returns the finalised envelope."""
+    env = extract_mod.extract(pf, rt.doc_class, ledger,
+                              allow_escalation=allow_escalation,
+                              subtype=rt.subtype)
+    tag = f"{rt.doc_class}/{rt.subtype}" if rt.subtype else rt.doc_class
+    env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
+    if rt.note:
+        env["provenance"]["stages"].append(f"router_note:{rt.note}")
+    return _finalise(env, pf, ledger)
+
+
+def _extract_group_batched(group_items: list[tuple[int, PreflightResult, Any]],
+                           doc_class: str, subtype: str | None,
+                           ledger: Ledger, allow_escalation: bool,
+                           batch_size: int = 3) -> list[tuple[int, dict]]:
+    """Extract a group of same-class documents using batched API calls.
+
+    Returns a list of (original_index, envelope) pairs.
+    """
+    results: list[tuple[int, dict]] = []
+    for chunk_start in range(0, len(group_items), batch_size):
+        chunk = group_items[chunk_start:chunk_start + batch_size]
+        chunk_pfs = [x[1] for x in chunk]
+        envs = extract_batch(chunk_pfs, doc_class, ledger,
+                             subtype=subtype, allow_escalation=allow_escalation)
+        for (orig_idx, pf, rt), env in zip(chunk, envs):
+            tag = f"{doc_class}/{subtype}" if subtype else doc_class
+            env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
+            if rt.note:
+                env["provenance"]["stages"].append(f"router_note:{rt.note}")
+            results.append((orig_idx, _finalise(env, pf, ledger)))
+    return results
+
+
+def _extract_group_individual(group_items: list[tuple[int, PreflightResult, Any]],
+                              ledger: Ledger, allow_escalation: bool,
+                              workers: int) -> list[tuple[int, dict]]:
+    """Extract a group of documents with individual API calls (in parallel).
+
+    Returns a list of (original_index, envelope) pairs.
+    """
+    def _do_one(item: tuple) -> tuple[int, dict]:
+        orig_idx, pf, rt = item
+        env = _extract_one(pf, rt, ledger, allow_escalation)
+        return orig_idx, env
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        return list(pool.map(_do_one, group_items))
+
+
 def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
                   dedupe: bool = True, allow_escalation: bool = True,
-                  batch: bool = True,
+                  batch: bool = False,
                   progress: Callable[[str], None] | None = None) -> list[dict]:
     """Stage 0 free gate -> stage 1 cheap router -> stage 2 sized extraction
     -> stage 3 validation and targeted escalation.
 
-    batch=True enables:
-      - Multi-image router: up to 4 thumbnails per call instead of 1
+    batch=True enables the optional multi-image extractor:
       - Multi-image extraction: up to 3 same-class docs per call for
         meter_reading and vendor_bill (work_report excluded — too long)
-      - Rich rulebook with few-shot examples (above cache floor, caches
-        after the first call)
-    """
-    from .batch_extract import extract_batch, BATCHABLE_CLASSES
 
+    It is opt-in because the published accuracy evidence predates it. A new
+    corpus must be scored with and without it before it can enter a production
+    default; a cheaper request that changes reading accuracy is not a win.
+    """
     pfs = preflight.run(sorted(paths), dedupe=dedupe)
     ledger.record("-", "preflight", "-", None,
                   note=f"screened={len(pfs)} passed={sum(1 for p in pfs if p.ok)}")
+    logger.info("preflight: %d files screened, %d passed",
+                len(pfs), sum(1 for p in pfs if p.ok))
 
     results: list[dict] = []
     live: list[PreflightResult] = []
@@ -153,15 +221,13 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
         route_results = list(pool.map(
             lambda pf: router.classify(pf, ledger, model=ROUTER_MODEL), live))
 
-    # ---- Stage 2: group by class for batched extraction, then extract ----
-    # Build an ordered list of (pf, route) so we can restore doc order at the end.
-    ordered: list[tuple[PreflightResult, Any, dict | None]] = [
-        (pf, rt, None) for pf, rt in zip(live, route_results)
-    ]
+    # ---- Stage 2: group by class, then extract ----
+    # Build result slots indexed by position in `live`.
+    result_slots: dict[int, dict] = {}
 
     # Handle not_a_document refusals immediately (no extraction needed).
     to_extract: list[tuple[int, PreflightResult, Any]] = []
-    for i, (pf, rt, _) in enumerate(ordered):
+    for i, (pf, rt) in enumerate(zip(live, route_results)):
         if rt.doc_class == "not_a_document":
             env = schemas.refusal(
                 pf.doc_id, "not_a_document",
@@ -169,9 +235,10 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
                 confidence=rt.confidence)
             env["quality_flags"] = list(pf.warnings)
             env["provenance"]["stages"].append(f"route:{ROUTER_MODEL}:refused")
+            logger.info("%s: refused at router (conf=%.2f)", pf.doc_id, rt.confidence)
             if progress:
                 progress(f"  {pf.doc_id}: refused at router")
-            ordered[i] = (pf, rt, _finalise(env, pf, ledger))
+            result_slots[i] = _finalise(env, pf, ledger)
         else:
             to_extract.append((i, pf, rt))
 
@@ -186,62 +253,34 @@ def run_optimized(paths: list[Path], ledger: Ledger, workers: int = 4,
 
         for (doc_class, subtype), group_items in groups.items():
             if doc_class in BATCHABLE_CLASSES and len(group_items) > 1:
-                # Batched extraction for meter_reading and vendor_bill.
-                batch_size = 3
-                for chunk_start in range(0, len(group_items), batch_size):
-                    chunk = group_items[chunk_start:chunk_start + batch_size]
-                    chunk_pfs = [x[1] for x in chunk]
-                    envs = extract_batch(chunk_pfs, doc_class, ledger,
-                                         subtype=subtype, allow_escalation=allow_escalation)
-                    for (orig_idx, pf, rt), env in zip(chunk, envs):
-                        tag = f"{doc_class}/{subtype}" if subtype else doc_class
-                        env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
-                        if rt.note:
-                            env["provenance"]["stages"].append(f"router_note:{rt.note}")
-                        if progress:
-                            esc = " (escalated)" if env["provenance"].get("escalated") else ""
-                            progress(f"  {pf.doc_id}: {doc_class} conf={env['confidence']}{esc} [batch]")
-                        ordered[orig_idx] = (pf, rt, _finalise(env, pf, ledger))
-            else:
-                # Individual extraction for work_report and singleton groups.
-                def _one_extract(item: tuple) -> None:
-                    orig_idx, pf, rt = item
-                    env = extract_mod.extract(pf, rt.doc_class, ledger,
-                                              allow_escalation=allow_escalation,
-                                              subtype=rt.subtype)
-                    tag = f"{rt.doc_class}/{rt.subtype}" if rt.subtype else rt.doc_class
-                    env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
-                    if rt.note:
-                        env["provenance"]["stages"].append(f"router_note:{rt.note}")
+                logger.debug("batch extracting %d %s/%s documents",
+                             len(group_items), doc_class, subtype)
+                for idx, env in _extract_group_batched(
+                        group_items, doc_class, subtype, ledger, allow_escalation):
                     if progress:
                         esc = " (escalated)" if env["provenance"].get("escalated") else ""
-                        progress(f"  {pf.doc_id}: {env['doc_class']} conf={env['confidence']}{esc}")
-                    ordered[orig_idx] = (pf, rt, _finalise(env, pf, ledger))
-
-                with ThreadPoolExecutor(max_workers=workers) as pool:
-                    list(pool.map(_one_extract, group_items))
+                        progress(f"  {env['doc_id']}: {doc_class} conf={env['confidence']}{esc} [batch]")
+                    result_slots[idx] = env
+            else:
+                for idx, env in _extract_group_individual(
+                        group_items, ledger, allow_escalation, workers):
+                    if progress:
+                        esc = " (escalated)" if env["provenance"].get("escalated") else ""
+                        progress(f"  {env['doc_id']}: {env['doc_class']} conf={env['confidence']}{esc}")
+                    result_slots[idx] = env
     else:
         # No batching: individual calls for everything.
-        def _one(item: tuple) -> None:
-            orig_idx, pf, rt = item
-            env = extract_mod.extract(pf, rt.doc_class, ledger,
-                                      allow_escalation=allow_escalation, subtype=rt.subtype)
-            tag = f"{rt.doc_class}/{rt.subtype}" if rt.subtype else rt.doc_class
-            env["provenance"]["stages"].insert(0, f"route:{ROUTER_MODEL}->{tag}")
-            if rt.note:
-                env["provenance"]["stages"].append(f"router_note:{rt.note}")
+        for idx, env in _extract_group_individual(
+                to_extract, ledger, allow_escalation, workers):
             if progress:
                 esc = " (escalated)" if env["provenance"].get("escalated") else ""
-                progress(f"  {pf.doc_id}: {env['doc_class']} conf={env['confidence']}{esc}")
-            ordered[orig_idx] = (pf, rt, _finalise(env, pf, ledger))
+                progress(f"  {env['doc_id']}: {env['doc_class']} conf={env['confidence']}{esc}")
+            result_slots[idx] = env
 
-        with ThreadPoolExecutor(max_workers=workers) as pool:
-            list(pool.map(_one, to_extract))
-
-    # Restore insertion order and add all results.
-    for pf, rt, env in ordered:
-        if env is not None:
-            results.append(env)
+    # Collect results in original order.
+    for i in range(len(live)):
+        if i in result_slots:
+            results.append(result_slots[i])
 
     results.sort(key=lambda e: e["doc_id"])
     return results

@@ -7,7 +7,10 @@ documents that actually failed verification.
 """
 from __future__ import annotations
 
+import logging
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 from . import imaging, jsonio, prompts, schemas, validate
 from .config import (CLASS_POLICY, DEGRADED_RES_BOOST, ESCALATION_THRESHOLD,
@@ -21,7 +24,7 @@ from .providers import call_vision
 # Haiku: 2048 tokens. Sonnet/Opus: 1024 tokens.
 # RULEBOOK_CORE (~400 tokens) is below both floors — caching was silently doing
 # nothing on extraction calls before rich_rulebook() was introduced.
-# rich_rulebook() is ~2100 tokens, above both floors.
+# rich_rulebook() is above both floors.
 _HAIKU_CACHE_FLOOR_TOKENS = 2048
 _SONNET_OPUS_CACHE_FLOOR_TOKENS = 1024
 _APPROX_TOKENS_PER_CHAR = 4  # conservative; actual is closer to 3.8
@@ -54,14 +57,13 @@ def _one_pass(pf: PreflightResult, doc_class: str, model: str, max_dim: int,
               subtype: str | None = None) -> tuple[dict | None, str, float]:
     media, b64, nbytes = imaging.encode(pf.image, max_dim=max_dim, quality=jpeg_q)
 
-    # Use the rich rulebook (core + all few-shot examples). At ~2100 tokens it
-    # exceeds the cache floor for every model tier, so prompt caching fires from
-    # the second call onwards. The examples also directly improve accuracy on the
-    # three failure modes they demonstrate.
-    system = prompts.rich_rulebook()
-    floor = _cache_floor_tokens(model)
-    system_tokens_approx = len(system) // _APPROX_TOKENS_PER_CHAR
-    should_cache = system_tokens_approx >= floor
+    # Preserve the measured production path: the compact core rulebook was used
+    # for the committed 47-image comparison. The richer cached prompt is only
+    # exercised by the explicit --batch experiment, where it can be measured
+    # together with the multi-image request shape. Do not smuggle an unmeasured
+    # prompt/model change into the default cost and accuracy claim.
+    system = prompts.RULEBOOK
+    should_cache = False
 
     resp = call_vision(
         model=model,
@@ -133,6 +135,9 @@ def extract(pf: PreflightResult, doc_class: str, ledger: Ledger,
         env["provenance"]["stages"].append(f"json:{note}")
 
     if allow_escalation and pol.escalate_to and (conf < ESCALATION_THRESHOLD or not rep.passed):
+        logger.info("escalating %s: conf=%.3f threshold=%.2f passed=%s issues=%s",
+                    pf.doc_id, conf, ESCALATION_THRESHOLD, rep.passed,
+                    ";".join(rep.issues[:3]) or "none")
         return _escalate(pf, doc_class, pol, ledger, env,
                          reason=f"conf={conf}|{';'.join(rep.issues[:3])}", subtype=subtype)
     return env

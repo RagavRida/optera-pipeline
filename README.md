@@ -17,9 +17,11 @@ accuracy, with hallucinated records reduced from 2 to 0.**
 | refusal accuracy | 62.5% | **100%** |
 | hallucinated records | 2 | **0** |
 
-Measured on all 47 starter images. Every number is summed from
-`out/ledger_*.jsonl`, written call-by-call from API-reported token counts — see
-[DESIGN.md](DESIGN.md) for methodology, error bars and known failure modes.
+Measured on all 47 starter images. The immutable evidence is committed under
+[`results/`](results/): every number is summed from its call-by-call JSONL
+ledger using API-reported token counts. New runs write the same artifacts to
+`out/`; see [DESIGN.md](DESIGN.md) for methodology, error bars and known
+failure modes.
 
 ---
 
@@ -44,6 +46,7 @@ python3 run.py --mode baseline          # the naive 1x only
 python3 run.py --profile cheap          # a cheaper, less accurate operating point
 python3 run.py --input /path/to/images  # any directory
 python3 run.py --limit 5                # smoke test on 5 files
+python3 run.py --batch                  # opt-in multi-image experiment; compare score first
 
 make sweep                              # model x resolution grid → out/sweep.json
 make variance                           # how much accuracy moves when nothing changes
@@ -64,6 +67,15 @@ and selectable with `--profile`:
 while scoring 20 points higher. On this corpus the spend is concentrated in
 work-report output tokens, which no profile changes — so downgrading models
 buys very little and costs a lot. That finding is discussed in DESIGN.md §4.2.
+
+### Batching is deliberately not in the headline
+
+The code includes an opt-in multi-image extractor for bounded meter and invoice
+outputs. It records one shared API call and allocates its actual cost across the
+participating documents. It is **off by default** because the committed 47-image
+accuracy run predates this optimization; run `make run` with and without
+`--batch` on a labelled corpus before promoting it. The published 1.52x result
+is therefore conservative rather than a claimed-but-unverified batch saving.
 
 ---
 

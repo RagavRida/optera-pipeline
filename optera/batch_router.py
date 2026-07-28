@@ -1,5 +1,12 @@
 """Multi-image router: classify several thumbnails in one API call.
 
+.. deprecated::
+    This module is kept for reference and potential future use but is NOT called
+    in the main pipeline. Multi-image router batching was tried and abandoned
+    because it caused misclassification of tyre-service bills and DEF invoices
+    as work_reports at 384px thumbnail resolution — two documents were dropped.
+    See pipeline.py L144-151 for the full rationale.
+
 The naive router sends one thumbnail per call. Each call pays the same fixed
 overhead: system prompt tokens, request latency, per-request connection cost.
 Sending N thumbnails in a single call pays that overhead once and gets N
@@ -96,13 +103,15 @@ def classify_batch(pfs: list[PreflightResult], ledger: Ledger,
     resolved from a batch response.
     """
     results: list[RouteResult | None] = [None] * len(pfs)
+    # Pre-build index map to avoid O(n²) pfs.index(pf) lookups.
+    pf_to_idx = {id(pf): i for i, pf in enumerate(pfs)}
     groups = [pfs[i:i + batch_size] for i in range(0, len(pfs), batch_size)]
 
     for group in groups:
         if len(group) == 1:
             # Single image: use the regular router (no overhead saving to batch)
             pf = group[0]
-            idx = pfs.index(pf)
+            idx = pf_to_idx[id(pf)]
             results[idx] = classify(pf, ledger, model=model, max_dim=max_dim)
             continue
 
@@ -138,7 +147,7 @@ def classify_batch(pfs: list[PreflightResult], ledger: Ledger,
             parsed = [None] * len(group)
 
         for pf, obj in zip(group, parsed):
-            idx = pfs.index(pf)
+            idx = pf_to_idx[id(pf)]
             rt = _result_from_obj(pf.doc_id, obj)
             if rt is None:
                 # Fallback: individual call

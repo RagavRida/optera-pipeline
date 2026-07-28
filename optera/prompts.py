@@ -57,8 +57,9 @@ REFUSAL
 # RULEBOOK      — core rules only (~400 tokens). Used when caching is
 #                 not beneficial (e.g. single-shot calls, short jobs).
 #
-# RICH_RULEBOOK — core + all six few-shot examples (~2100 tokens). This
-#                 exceeds both the Haiku (2048) and Sonnet/Opus (1024)
+# RICH_RULEBOOK — core + all few-shot examples (comfortably above 2048
+#                 approximate tokens). This exceeds both the Haiku (2048)
+#                 and Sonnet/Opus (1024)
 #                 prompt-caching floors, so the system prompt is cached
 #                 after the first call. The ~$0.013 cache-write cost is
 #                 recovered after ~2 subsequent reads.

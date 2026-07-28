@@ -10,8 +10,11 @@ redundant, then measure quality on what survives.
 """
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass, field
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 from . import imaging
 from .config import BLUR_VAR_FLOOR, DARK_MEAN_FLOOR, PHASH_THRESHOLD
@@ -59,11 +62,13 @@ def run(paths: list[Path], dedupe: bool = True) -> list[PreflightResult]:
 
         # 1. Not an image at all -> reject for free.
         if mime is None:
-            head = path.open("rb").read(64)
+            with path.open("rb") as _fh:
+                head = _fh.read(64)
             hint = "html_error_page" if b"<!doctype" in head.lower() or b"<html" in head.lower() else "unrecognised_format"
             results.append(PreflightResult(
                 doc_id=doc_id, path=path, ok=False,
                 reason=f"not_an_image:{hint}", bytes_on_disk=path.stat().st_size))
+            logger.info("preflight reject %s: not_an_image:%s", doc_id, hint)
             continue
 
         if mime == "image/heic":
@@ -97,6 +102,7 @@ def run(paths: list[Path], dedupe: bool = True) -> list[PreflightResult]:
                 res.reason = "duplicate:exact"
                 res.duplicate_of = seen_sha[li.sha256]
                 results.append(res)
+                logger.info("preflight dedup %s: exact match of %s", doc_id, res.duplicate_of)
                 continue
             h = imaging.dhash(li.image)
             res.dhash = h
@@ -106,6 +112,7 @@ def run(paths: list[Path], dedupe: bool = True) -> list[PreflightResult]:
                 res.reason = "duplicate:near"
                 res.duplicate_of = near
                 results.append(res)
+                logger.info("preflight dedup %s: near match of %s", doc_id, near)
                 continue
             seen_sha[li.sha256] = doc_id
             seen_dhash.append((h, doc_id))
