@@ -38,6 +38,21 @@ comparison and writes ledgers, per-document JSON and a report to `out/`.
 
 Only dependency is Pillow. API calls use the standard library.
 
+### No API key?
+
+You can still verify every published number without client images or any model
+credential:
+
+```bash
+make verify
+```
+
+This recomputes the cost and accuracy summary from the committed extraction
+outputs, JSONL token/cost ledgers, and hand-written ground truth. It makes no
+network calls. It is evidence verification, **not** offline inference on new
+images; live `make run` requires either `ANTHROPIC_API_KEY` (the measured
+configuration) or a separately evaluated provider/model configuration.
+
 ### Other commands
 
 ```bash

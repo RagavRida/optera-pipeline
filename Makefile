@@ -1,4 +1,4 @@
-.PHONY: install install-dev run optimized baseline cheap sweep variance test test-cov lint clean
+.PHONY: install install-dev run optimized baseline cheap verify sweep variance test test-cov lint clean
 
 install:
 	python3 -m pip install -r requirements.txt
@@ -18,6 +18,11 @@ baseline:
 
 cheap:
 	python3 run.py --mode optimized --profile cheap
+
+# Recompute the published cost/accuracy figures from committed artifacts.
+# No images or model API credential required; this is not live inference.
+verify:
+	python3 scripts/verify_evidence.py
 
 # Evidence behind the per-class policy table in optera/config.py
 sweep:
