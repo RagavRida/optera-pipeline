@@ -1,0 +1,1110 @@
+{
+  "run": "20260728T022647Z",
+  "files": 47,
+  "mode": "both",
+  "profile": "balanced",
+  "baseline": {
+    "cost": {
+      "run": "baseline_20260728T022647Z",
+      "documents": 47,
+      "api_calls": 46,
+      "calls_per_doc": 0.979,
+      "input_tokens": 150606,
+      "output_tokens": 26187,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "total_cost_usd": 1.407705,
+      "cost_per_doc_usd": 0.029951,
+      "cost_per_1000_docs_usd": 29.95,
+      "wall_latency_s": 500.2,
+      "by_stage": {
+        "baseline": {
+          "calls": 46,
+          "in": 150606,
+          "out": 26187,
+          "cache_r": 0,
+          "cost": 1.407705
+        }
+      },
+      "by_model": {
+        "claude-opus-4-5-20251101": {
+          "calls": 46,
+          "in": 150606,
+          "out": 26187,
+          "cost": 1.407705
+        }
+      },
+      "wall_clock_s": 87.2
+    },
+    "accuracy": {
+      "routing_accuracy": 1.0,
+      "routing_correct": 39,
+      "routing_total": 39,
+      "refusal_accuracy": 0.625,
+      "refusal_correct": 5,
+      "refusal_total": 8,
+      "hallucination_count": 2,
+      "hallucinated_docs": [
+        "optera_doc_05",
+        "optera_doc_13"
+      ],
+      "dropped_real_documents": [],
+      "misrouted": [],
+      "field_accuracy": 0.8022,
+      "field_correct": 73,
+      "field_total": 91,
+      "dedup_detected": [],
+      "dedup_missed": [
+        "optera_doc_05",
+        "optera_doc_13"
+      ],
+      "per_doc": {
+        "optera_doc_01": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.059895,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_02": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.04565,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_03": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.026945,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 8,
+            "total": 11,
+            "misses": [
+              "bus_codes missing: ['mam01', 'tam23', 'tcmex1']"
+            ]
+          }
+        },
+        "optera_doc_04": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.028225,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_05": {
+          "expected_class": "work_report",
+          "expect": "refuse",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.02889,
+          "verdict": "HALLUCINATED"
+        },
+        "optera_doc_06": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.031995,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_07": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03002,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_08": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.030285,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_09": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.031345,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_10": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.02982,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_11": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.02832,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_12": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.046945,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_13": {
+          "expected_class": "work_report",
+          "expect": "refuse",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03068,
+          "verdict": "HALLUCINATED"
+        },
+        "optera_doc_14": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.030295,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 11,
+            "total": 13,
+            "misses": [
+              "bus_codes missing: ['mam43', 'tcmex1']"
+            ]
+          }
+        },
+        "optera_doc_15": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.043495,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_16": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03667,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_17": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.062345,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_18": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.029445,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_19": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.06902,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_20": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.02392,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 2,
+            "total": 6,
+            "misses": [
+              "report_date: got '2025-06-16' want '2026-06-16'",
+              "bus_codes missing: ['mam20', 'tam13', 'tam17']"
+            ]
+          }
+        },
+        "optera_doc_21": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.071045,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_22": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.028245,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_23": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.041345,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_24": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03797,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_25": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.055445,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_26": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.022045,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 5,
+            "total": 8,
+            "misses": [
+              "vendor_gstin: got '24ABNPR5802P1Z2' want '24ACWPP0885C1ZB'",
+              "invoice_date: got '2025-06-20' want '2026-06-20'",
+              "vehicle_no: got 'GJ 06 AU 9885' want 'GJ 16 AU 9885'"
+            ]
+          }
+        },
+        "optera_doc_27": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.02085,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 5,
+            "total": 5,
+            "misses": []
+          }
+        },
+        "optera_doc_28": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.0205,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 7,
+            "total": 7,
+            "misses": []
+          }
+        },
+        "optera_doc_29": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.02087,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_30": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.0301,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_31": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.021995,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_32": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.02177,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 6,
+            "total": 8,
+            "misses": [
+              "buyer_name: got 'G.S.R.T.C. DTC Vadodara' want 'GSRTC DTC'",
+              "vehicle_no: got 'GJ 16 AU 6545' want 'GJ 16 AV 6545'"
+            ]
+          }
+        },
+        "optera_doc_33": {
+          "expected_class": "corrupt",
+          "expect": "refuse",
+          "got_class": null,
+          "status": "error",
+          "cost_usd": 0,
+          "verdict": "not_refused_but_empty"
+        },
+        "optera_doc_34": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.01627,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_35": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.0291,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 4,
+            "total": 6,
+            "misses": [
+              "vehicle_no: got 'GJ06 AV 2305' want 'GJ16 AV 2305'",
+              "line_item_count: got 15 want 3"
+            ]
+          }
+        },
+        "optera_doc_36": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.018755,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_37": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.01902,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 2,
+            "total": 2,
+            "misses": []
+          }
+        },
+        "optera_doc_38": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.018605,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 3,
+            "misses": []
+          }
+        },
+        "optera_doc_39": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.0191,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 2,
+            "total": 3,
+            "misses": [
+              "trip_km: got 130.8 want 1308.8"
+            ]
+          }
+        },
+        "optera_doc_40": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.018905,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_41": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.01955,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 5,
+            "total": 5,
+            "misses": []
+          }
+        },
+        "optera_doc_42": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.01858,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 3,
+            "misses": []
+          }
+        },
+        "optera_doc_43": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.019345,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 7,
+            "total": 8,
+            "misses": [
+              "vehicle_no: got 'GJ 16 AY 4525' want 'GJ 16 AY 4825'"
+            ]
+          }
+        },
+        "optera_doc_44": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.018905,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 3,
+            "misses": []
+          }
+        },
+        "optera_doc_45": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.017455,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_46": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.016705,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_47": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.021025,
+          "verdict": "routed_ok"
+        }
+      }
+    }
+  },
+  "optimized": {
+    "cost": {
+      "run": "optimized_20260728T022647Z",
+      "documents": 47,
+      "api_calls": 88,
+      "calls_per_doc": 1.872,
+      "input_tokens": 132040,
+      "output_tokens": 22240,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "total_cost_usd": 0.83913,
+      "cost_per_doc_usd": 0.017854,
+      "cost_per_1000_docs_usd": 17.85,
+      "wall_latency_s": 490.7,
+      "by_stage": {
+        "preflight": {
+          "calls": 1,
+          "in": 0,
+          "out": 0,
+          "cache_r": 0,
+          "cost": 0.0
+        },
+        "route": {
+          "calls": 44,
+          "in": 19540,
+          "out": 1160,
+          "cache_r": 0,
+          "cost": 0.02534
+        },
+        "extract": {
+          "calls": 39,
+          "in": 99550,
+          "out": 18590,
+          "cache_r": 0,
+          "cost": 0.68679
+        },
+        "escalate": {
+          "calls": 5,
+          "in": 12950,
+          "out": 2490,
+          "cache_r": 0,
+          "cost": 0.127
+        }
+      },
+      "by_model": {
+        "claude-haiku-4-5-20251001": {
+          "calls": 44,
+          "in": 19540,
+          "out": 1160,
+          "cost": 0.02534
+        },
+        "claude-sonnet-4-5-20250929": {
+          "calls": 23,
+          "in": 58830,
+          "out": 15805,
+          "cost": 0.413565
+        },
+        "claude-opus-4-5-20251101": {
+          "calls": 21,
+          "in": 53670,
+          "out": 5275,
+          "cost": 0.400225
+        }
+      },
+      "wall_clock_s": 91.5
+    },
+    "accuracy": {
+      "routing_accuracy": 1.0,
+      "routing_correct": 39,
+      "routing_total": 39,
+      "refusal_accuracy": 1.0,
+      "refusal_correct": 8,
+      "refusal_total": 8,
+      "hallucination_count": 0,
+      "hallucinated_docs": [],
+      "dropped_real_documents": [],
+      "misrouted": [],
+      "field_accuracy": 0.7033,
+      "field_correct": 64,
+      "field_total": 91,
+      "dedup_detected": [
+        "optera_doc_05",
+        "optera_doc_13"
+      ],
+      "dedup_missed": [],
+      "per_doc": {
+        "optera_doc_01": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03293,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_02": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.020216,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_03": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.012652,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 2,
+            "total": 11,
+            "misses": [
+              "report_date: got '2020-06-22' want '2026-06-08'",
+              "bus_codes missing: ['mac31', 'mam01', 'mam43', 'tam17', 'tam23', 'tam38', 'tam47', 'tcmex1']"
+            ]
+          }
+        },
+        "optera_doc_04": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.013375,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_05": {
+          "expected_class": "work_report",
+          "expect": "refuse",
+          "got_class": "duplicate",
+          "status": "refused",
+          "cost_usd": 0,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_06": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03634,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_07": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.014,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_08": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.0141,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_09": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.01667,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_10": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.013717,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_11": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.01595,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_12": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.04455,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_13": {
+          "expected_class": "work_report",
+          "expect": "refuse",
+          "got_class": "duplicate",
+          "status": "refused",
+          "cost_usd": 0,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_14": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.01424,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 10,
+            "total": 13,
+            "misses": [
+              "report_date: got '2025-06-12' want '2026-06-14'",
+              "bus_codes missing: ['mam43', 'tcm47']"
+            ]
+          }
+        },
+        "optera_doc_15": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.019085,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_16": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.051035,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_17": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.025895,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_18": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.014075,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_19": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.03026,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_20": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.011765,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 6,
+            "misses": [
+              "report_date: got '2025-06-16' want '2026-06-16'",
+              "bus_codes missing: ['tam13', 'tam17']"
+            ]
+          }
+        },
+        "optera_doc_21": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.02972,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_22": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.01322,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_23": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.048915,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_24": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.034745,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_25": {
+          "expected_class": "work_report",
+          "expect": "extract",
+          "got_class": "work_report",
+          "status": "extracted",
+          "cost_usd": 0.02654,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_26": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.02059,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 4,
+            "total": 8,
+            "misses": [
+              "vendor_gstin: got '24ABNPR5802P1Z2' want '24ACWPP0885C1ZB'",
+              "invoice_date: got '2025-06-20' want '2026-06-20'",
+              "vehicle_no: got 'GJ 06 AU 9885' want 'GJ 16 AU 9885'",
+              "line_item_count: got 3 want 1"
+            ]
+          }
+        },
+        "optera_doc_27": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.017778,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 5,
+            "total": 5,
+            "misses": []
+          }
+        },
+        "optera_doc_28": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.017403,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 6,
+            "total": 7,
+            "misses": [
+              "invoice_date: got '2024-07-08' want '2026-07-08'"
+            ]
+          }
+        },
+        "optera_doc_29": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.017765,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_30": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.027128,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_31": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.01894,
+          "verdict": "routed_ok"
+        },
+        "optera_doc_32": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.01854,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 6,
+            "total": 8,
+            "misses": [
+              "buyer_name: got 'G.S.R.T.C. DTC Vadodara' want 'GSRTC DTC'",
+              "vehicle_no: got 'GJ 16 AU 6545' want 'GJ 16 AV 6545'"
+            ]
+          }
+        },
+        "optera_doc_33": {
+          "expected_class": "corrupt",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_34": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.0006,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_35": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.022153,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 4,
+            "total": 6,
+            "misses": [
+              "vehicle_no: got 'GJ06 AV 2305' want 'GJ16 AV 2305'",
+              "line_item_count: got 15 want 3"
+            ]
+          }
+        },
+        "optera_doc_36": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.000642,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_37": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.014645,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 2,
+            "total": 2,
+            "misses": []
+          }
+        },
+        "optera_doc_38": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.014149,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 3,
+            "misses": []
+          }
+        },
+        "optera_doc_39": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.014563,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 2,
+            "total": 3,
+            "misses": [
+              "trip_km: got 130.8 want 1308.8"
+            ]
+          }
+        },
+        "optera_doc_40": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.000544,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_41": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.015228,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 5,
+            "total": 5,
+            "misses": []
+          }
+        },
+        "optera_doc_42": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.014029,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 3,
+            "misses": []
+          }
+        },
+        "optera_doc_43": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.01629,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 6,
+            "total": 8,
+            "misses": [
+              "invoice_date: got '2025-07-19' want '2026-07-19'",
+              "vehicle_no: got 'GJ 16 AY 4525' want 'GJ 16 AY 4825'"
+            ]
+          }
+        },
+        "optera_doc_44": {
+          "expected_class": "meter_reading",
+          "expect": "extract",
+          "got_class": "meter_reading",
+          "status": "extracted",
+          "cost_usd": 0.014354,
+          "verdict": "routed_ok",
+          "fields": {
+            "correct": 3,
+            "total": 3,
+            "misses": []
+          }
+        },
+        "optera_doc_45": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.000558,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_46": {
+          "expected_class": "not_a_document",
+          "expect": "refuse",
+          "got_class": "not_a_document",
+          "status": "refused",
+          "cost_usd": 0.000558,
+          "verdict": "correctly_refused"
+        },
+        "optera_doc_47": {
+          "expected_class": "vendor_bill",
+          "expect": "extract",
+          "got_class": "vendor_bill",
+          "status": "extracted",
+          "cost_usd": 0.018678,
+          "verdict": "routed_ok"
+        }
+      }
+    }
+  },
+  "comparison": {
+    "baseline_cost_per_doc": 0.029951,
+    "optimized_cost_per_doc": 0.017854,
+    "reduction_x": 1.68,
+    "saved_pct": 40.39
+  }
+}

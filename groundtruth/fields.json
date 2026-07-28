@@ -1,0 +1,149 @@
+{
+  "_method": "Field-level gold, transcribed by a human reading each image at full resolution. Every numeric value below was read digit by digit from a zoomed crop.",
+  "_scope_honesty": "This covers 15 of the 47 files, not all of them. All 6 meter readings and 6 of 10 vendor bills carry full field gold. Work reports carry STRUCTURAL gold only - depot, date, entry count and the set of vehicle codes - because verbatim transcription of 25 pages of trilingual handwriting was not achievable in the time available, and a half-accurate gold set is worse than an honestly scoped one. Verbatim work-report gold is the single biggest gap in this evaluation and is called out in DESIGN.md.",
+  "_matching": "Numbers compare with a small relative tolerance; strings compare case- and punctuation-insensitively; vehicle codes compare on alphanumerics only, so 'GJ-06-AV-4045' and 'GJ 06 AV 4045' agree while '4055' does not.",
+
+  "meter_reading": {
+    "optera_doc_37": {
+      "reading_type": "odometer",
+      "odometer_km": 188973,
+      "_note": "Severely blurred. The only legible field is the odometer; km/L shows 0.0. A pipeline that reports extra fields here is guessing."
+    },
+    "optera_doc_38": {
+      "reading_type": "odometer",
+      "odometer_km": 32065.4,
+      "trip_km": 1458.1,
+      "_note": "The decimal is the whole test: 32065.4 not 320654. At 768px the digits corrupt to 320854."
+    },
+    "optera_doc_39": {
+      "reading_type": "odometer",
+      "odometer_km": 31617.6,
+      "trip_km": 1308.8
+    },
+    "optera_doc_41": {
+      "reading_type": "def_dispenser",
+      "amount_rs": 3199.76,
+      "litres": 43.24,
+      "rate_per_litre": 74.00,
+      "urea_concentration_pct": 32.50,
+      "_note": "43.24 x 74.00 = 3199.76 exactly, so the arithmetic validator can verify this document without ground truth at all."
+    },
+    "optera_doc_42": {
+      "reading_type": "odometer",
+      "odometer_km": 37057.9,
+      "trip_km": 38.6
+    },
+    "optera_doc_44": {
+      "reading_type": "odometer",
+      "odometer_km": 459794.3,
+      "trip_km": 8356.3,
+      "_note": "Older cluster; ODO and trip sit on one cramped line. Six-figure odometer."
+    }
+  },
+
+  "vendor_bill": {
+    "optera_doc_26": {
+      "vendor_name": "ANUPAM ENTERPRISE",
+      "vendor_gstin": "24ACWPP0885C1ZB",
+      "invoice_no": "AE/268/26-27",
+      "invoice_date": "2026-06-20",
+      "vehicle_no": "GJ 16 AU 9885",
+      "total_amount": 15600.00,
+      "tax_amount": 2379.66,
+      "line_item_count": 1,
+      "line_items": [{"description": "XP1000", "hsn": "85071000", "rate": 6610.17, "amount": 13220.34}],
+      "_note": "13220.34 + 1189.83 + 1189.83 = 15600.00. Buyer is Avtarsingh Mahendrasingh Ramgadia."
+    },
+    "optera_doc_27": {
+      "vendor_name": "KIRAN GREASING SERVICE",
+      "invoice_date": "2026-06-28",
+      "vehicle_no": "GJ-06-AV-4045",
+      "total_amount": 200,
+      "line_item_count": 1,
+      "_note": "Single Hindi line item. Bill number left blank on the pad - correct output is null, not a guess."
+    },
+    "optera_doc_28": {
+      "vendor_name": "TIWARI AUTO PARTS",
+      "invoice_no": "312",
+      "invoice_date": "2026-07-08",
+      "buyer_name": "DTC",
+      "vehicle_no": "GJ16AV 9065",
+      "total_amount": 1750,
+      "line_item_count": 1,
+      "line_items": [{"description": "DEF TATA", "amount": 1750}]
+    },
+    "optera_doc_32": {
+      "vendor_name": "PURAN CAR SEAT",
+      "vendor_gstin": "24BOMPM8191K1ZA",
+      "invoice_no": "691",
+      "invoice_date": "2026-06-04",
+      "buyer_name": "GSRTC DTC",
+      "vehicle_no": "GJ 16 AV 6545",
+      "total_amount": 1400,
+      "line_item_count": 2,
+      "line_items": [
+        {"description": "Driver Seat / Driver Back", "qty": 2, "amount": 700},
+        {"description": "Conductor Seat / Conductor Back", "qty": 2, "amount": 700}
+      ]
+    },
+    "optera_doc_35": {
+      "vendor_name": "SAJID TYRE SERVICE",
+      "invoice_no": "196",
+      "invoice_date": "2026-07-07",
+      "vehicle_no": "GJ16 AV 2305",
+      "total_amount": 1600,
+      "line_item_count": 3,
+      "line_items": [
+        {"description": "Puncture Fitting", "qty": 1, "amount": 150},
+        {"description": "Machine Fitting", "qty": 1, "amount": 50},
+        {"description": "Omni Patch", "amount": 1400}
+      ],
+      "_note": "Printed 15-row checklist; only rows 1, 3 and 6 are priced. 150+50+1400 = 1600. Row 13 is ticked but free - a pipeline that invents an amount for it is wrong."
+    },
+    "optera_doc_43": {
+      "vendor_name": "JAVID SABIRBHAI SUNASARA",
+      "invoice_no": "1243",
+      "invoice_date": "2026-07-19",
+      "buyer_name": "DASHMESH TRANSPORT COMPANY",
+      "vehicle_no": "GJ 16 AY 4825",
+      "total_amount": 2358.00,
+      "tax_amount": 359.69,
+      "line_item_count": 1,
+      "line_items": [{"description": "DIESEL EXHAUST FLUID", "hsn": "31021000", "qty": 39.3, "rate": 50.85, "amount": 2358.00}],
+      "_note": "1998.31 taxable + 359.69 GST = 2358.00."
+    }
+  },
+
+  "work_report": {
+    "_structural_only": true,
+    "optera_doc_03": {
+      "depot": "Paldi",
+      "report_date": "2026-06-08",
+      "entry_count": 9,
+      "bus_codes": ["TAM17", "TAM38", "MAM43", "MAC31", "TAM38", "TCMEX1", "TAM23", "MAM01", "TAM47"]
+    },
+    "optera_doc_14": {
+      "depot": "Paldi",
+      "report_date": "2026-06-14",
+      "entry_count": 10,
+      "bus_codes": ["TCM06", "TCMEX1", "MAM43", "TCM47", "MAM19", "MAM21", "TAM26", "TAM24", "MAM18", "TAM12"],
+      "_note": "First two entries are written in Gujarati/Devanagari script, the rest in English. Tests the do-not-transliterate rule."
+    },
+    "optera_doc_20": {
+      "depot": "Paldi",
+      "report_date": "2026-06-16",
+      "entry_count": 5,
+      "bus_codes": ["TAM17", "MAM20", "MAM20", "TAM13"],
+      "_note": "SR numbers run 12-16, so this is page 2 of that day. The final entry ('20 buses air fill Complete') has no bus code, which is why bus_codes is shorter than entry_count."
+    }
+  },
+
+  "not_a_document": {
+    "_refusal_only": true,
+    "optera_doc_34": {"observed": "hands holding a tyre inner tube"},
+    "optera_doc_36": {"observed": "bare wheel rim and tyre on the ground"},
+    "optera_doc_40": {"observed": "DEF filler neck on a Cummins tank"},
+    "optera_doc_45": {"observed": "battery installed in a vehicle tray"},
+    "optera_doc_46": {"observed": "two batteries on the ground"}
+  }
+}

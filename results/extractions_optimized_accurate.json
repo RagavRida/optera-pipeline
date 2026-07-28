@@ -1,0 +1,6326 @@
+[
+  {
+    "doc_id": "optera_doc_01",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.65,
+    "data": {
+      "depot": "VADAJ",
+      "report_date": "2026-06-09",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TCM28,35,39,30",
+          "work_done": "ભસાળ-ટેળ PII ઓરિંગ કુલાર",
+          "material": "corel ટેળ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TCM28",
+          "work_done": "ટ ઓલ કુલાર simi -આો ગળ ઓઈલમો",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TCM30",
+          "work_done": "ટેળ ઓળલ કુલાર simi",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TCM35",
+          "work_done": "ટ ઓલ કુલાર -ચાળ ગળ ઓઈલમો",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TCM39",
+          "work_done": "ટેળલ કુલાર આળો ટેળ ખાળ કુળ ઓળાટર ચાફિય",
+          "material": "કોળલેળ ઓળ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "R-TOM22",
+          "work_done": "ઈળિળો પરેલળ ળિળ ગાટળી ળીળીળ",
+          "material": "ળિળ2",
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TCM2",
+          "work_done": "ળળાટ ળિળળ ળો2",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "TOM12",
+          "work_done": "-ચાળ ગળ ઓઈળ મો",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": "Kamlesh/Pathak",
+          "bus_no": "MAC1",
+          "work_done": "ઓળો ળોળો ટા-ળાળ ળળળીળાળ",
+          "material": "TOM17 ળો",
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": "Body",
+          "bus_no": "રાળેળાળો /ળાળાળા",
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "Tch-21",
+          "work_done": "રાળા ળો ઓા ળાળ ળિટર ળીળ2",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "Tom-36",
+          "work_done": "ળાફેર ળિળો ઓા ળાળા",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": null,
+          "bus_no": "Tch-65",
+          "work_done": "ળાળીળળ2 ળિળો ઓા ળાળ",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": "13",
+          "mechanic": null,
+          "bus_no": "Tom-3",
+          "work_done": "ળાળાળ1 ળાળી ઓ2",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": "14",
+          "mechanic": null,
+          "bus_no": "Tom-24",
+          "work_done": "ળાળા ઓા ળાળી ઓ2",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": "15",
+          "mechanic": null,
+          "bus_no": "Tom-4",
+          "work_done": "ળાળા ઓા ઓા ઓા ઓ2",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": "16",
+          "mechanic": null,
+          "bus_no": "Tom-35",
+          "work_done": "ળીળેળા ઈળાળાઓ ળાળઓા ફેળઓ ઓ2",
+          "material": "slu",
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": null,
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "17",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-4",
+          "work_done": "ળિ ળેળી ળેળ ળો TOM-10 ળો",
+          "material": "ળાળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "18",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-6",
+          "work_done": "ળળ ળાટ,ળળળ ળિળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "19",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-4",
+          "work_done": "ળા ECU ળેળ ળો TOM-6 ળો",
+          "material": "SET",
+          "struck_through": false
+        },
+        {
+          "sr_no": "20",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TEM-20",
+          "work_done": "ળો ળેળી ળળા",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": "21",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TCM51",
+          "work_done": "ળાળ ળા ળિળે ળળાળ ળિળો",
+          "material": "ળાળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "22",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-11,10,16",
+          "work_done": "ઓઓાળ EM ળેઓ ળળા ળાળા ળાળળ",
+          "material": "ળાળ ળિળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "23",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-8",
+          "work_done": "R.M. ળેળ ળળા ળાળા ળાઓળળ",
+          "material": "ળાળળિળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "24",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "MAM-27",
+          "work_done": "R.M ળ RMS ળળા",
+          "material": "ળાળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "25",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-6",
+          "work_done": "ળીળ ળાળા",
+          "material": "ળાળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "26",
+          "mechanic": "Hotesh/Nilesh",
+          "bus_no": "TOM-10",
+          "work_done": "ળીળ ળળા",
+          "material": "ળાળા",
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 1278,
+          "cache_read": 0,
+          "usd": 0.0449
+        }
+      ],
+      "cost_usd": 0.04549,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "json:unfenced",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_01",
+      "ok": true,
+      "reason": "",
+      "sha256": "0829dab11aa9993b",
+      "dhash": "a0870d0f8f8fbfbc",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 130340,
+      "truncated": false,
+      "blur": 924.1,
+      "brightness": 151.6,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_02",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.78,
+    "data": {
+      "depot": "Memco",
+      "report_date": "2026-06-07",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "Dayaram",
+          "bus_no": "44",
+          "work_done": "Aage Peche Tyre Change Kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Imtiyaz Hel",
+          "bus_no": "52",
+          "work_done": "Tyer Puncher lelya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "6",
+          "work_done": "Driver Side Piche Puncher Kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "15",
+          "work_done": "Rear Left Side Puncher Kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "3",
+          "work_done": "50, 51, 20, 19, 22, 14, 13 Hawa Checkinge",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "1",
+          "mechanic": "Santosh",
+          "bus_no": "26",
+          "work_done": "Four Wheel Ka Liner dala. 2 liter engine oil done",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Naresh",
+          "bus_no": "20",
+          "work_done": "Clutch Setting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "Ajay",
+          "bus_no": "50",
+          "work_done": "Read left side liner dala",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "11",
+          "work_done": "200g Shining oil top up",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "32",
+          "work_done": "Brek Setting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "3",
+          "work_done": "Four Wheel Ka Brek Setting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "25",
+          "work_done": "Radiator change Kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "42",
+          "work_done": "Soni ke chal gai toad far",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "49",
+          "work_done": "Hira wari gai toad far",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "35",
+          "work_done": "Depo gai toadfar",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "3,4",
+          "work_done": "(oil filter, 4 Plug, 11 liter oil) x 2 Service",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "1",
+          "mechanic": "Girdharibai",
+          "bus_no": "51",
+          "work_done": "Battri change Kiya MAC-19 Ka 1, Horn Setting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Jogindar",
+          "bus_no": "19",
+          "work_done": "Two Battri new fitting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "11",
+          "work_done": "Air Lekage Chek Kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "3",
+          "work_done": "Rear door Air lekage Cheks",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "1",
+          "mechanic": "KALAM",
+          "bus_no": "13",
+          "work_done": "Ac Chek Blower motor Fail Pending",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "3",
+          "work_done": "Ac Chek ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "5",
+          "work_done": "Ac Chek",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "50",
+          "work_done": "Ac Chek Condenser fan Problem Pending",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000548
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2586,
+          "out": 604,
+          "cache_read": 0,
+          "usd": 0.02803
+        }
+      ],
+      "cost_usd": 0.028578,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_02",
+      "ok": true,
+      "reason": "",
+      "sha256": "41bddb33c2f0c667",
+      "dhash": "cacccec6c6c0cd6e",
+      "duplicate_of": null,
+      "dimensions": [
+        899,
+        1599
+      ],
+      "bytes": 94785,
+      "truncated": false,
+      "blur": 701.5,
+      "brightness": 129.3,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_03",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "depot": "Paldi",
+      "report_date": "2026-06-08",
+      "entries": [
+        {
+          "sr_no": "01",
+          "mechanic": null,
+          "bus_no": "TAM17",
+          "work_done": "8mm. Air pressure shocket change-, axle packing ol pcs",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "02",
+          "mechanic": null,
+          "bus_no": "TAM38",
+          "work_done": "All wheel brake set",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "03",
+          "mechanic": null,
+          "bus_no": "MAM43",
+          "work_done": "brake pedal valve change old fit",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "04",
+          "mechanic": null,
+          "bus_no": "MAC31",
+          "work_done": "All Coolant hose liner check and clean, Radiator clean",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "05",
+          "mechanic": null,
+          "bus_no": "TAM38",
+          "work_done": "brake Rechar kit change ol pcs",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "06",
+          "mechanic": null,
+          "bus_no": "TCMEx1",
+          "work_done": "Air dry valve change ol hand brake work Complete",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "07",
+          "mechanic": null,
+          "bus_no": "TAM23",
+          "work_done": "Rear left side wheel Service. brake liner change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "08",
+          "mechanic": null,
+          "bus_no": "MAM21",
+          "work_done": "ol pcs battery New fit",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "09",
+          "mechanic": null,
+          "bus_no": "TAM47",
+          "work_done": "ol pcs battery New fit",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 432,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000562
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2360,
+          "out": 259,
+          "cache_read": 0,
+          "usd": 0.018275
+        }
+      ],
+      "cost_usd": 0.018837,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_03",
+      "ok": true,
+      "reason": "",
+      "sha256": "e4291a0c180c02da",
+      "dhash": "8683038280c0c0ba",
+      "duplicate_of": null,
+      "dimensions": [
+        802,
+        1280
+      ],
+      "bytes": 89850,
+      "truncated": false,
+      "blur": 563.7,
+      "brightness": 183.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_04",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "depot": "Paldi",
+      "report_date": "2026-06-19",
+      "entries": [
+        {
+          "sr_no": "01",
+          "mechanic": null,
+          "bus_no": "TAM17",
+          "work_done": "Rear left Side axle packing change, cl pcr anabend tube",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "02",
+          "mechanic": null,
+          "bus_no": "MAM44",
+          "work_done": "water pump change, fan belt change, anabend cl pcs",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "03",
+          "mechanic": null,
+          "bus_no": "TCM42",
+          "work_done": "Reverse Gear Cable change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "04",
+          "mechanic": null,
+          "bus_no": "MAM21",
+          "work_done": "henzo wirer so pcr, Relay Valve change (with MPM43",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "05",
+          "mechanic": null,
+          "bus_no": "TAM24",
+          "work_done": "All wheel brake Set.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "06",
+          "mechanic": null,
+          "bus_no": "TAM21",
+          "work_done": "Radiator change, Coolant topup",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "07",
+          "mechanic": null,
+          "bus_no": "TAM22",
+          "work_done": "Rear left Side wheel Service, old bearing kit 322912",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "08",
+          "mechanic": null,
+          "bus_no": "MAM42",
+          "work_done": "Air Compressor open and Ring change. Steering oil topup 500 ml.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "09",
+          "mechanic": null,
+          "bus_no": "TAM23",
+          "work_done": "Acml. Steering oil topup",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 432,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000562
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2406,
+          "out": 286,
+          "cache_read": 0,
+          "usd": 0.01918
+        }
+      ],
+      "cost_usd": 0.019742,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_04",
+      "ok": true,
+      "reason": "",
+      "sha256": "f672ae2e7b5ae0ae",
+      "dhash": "52410ff9fdff75fe",
+      "duplicate_of": null,
+      "dimensions": [
+        816,
+        1280
+      ],
+      "bytes": 94658,
+      "truncated": false,
+      "blur": 699.0,
+      "brightness": 177.8,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_05",
+    "doc_class": "duplicate",
+    "status": "refused",
+    "confidence": 1.0,
+    "data": null,
+    "refusal": {
+      "reason": "duplicate:near",
+      "observed": "Rejected at preflight without any model call. Duplicate of optera_doc_04"
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [],
+      "cost_usd": 0,
+      "stages": [
+        "preflight:free_reject"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_05",
+      "ok": false,
+      "reason": "duplicate:near",
+      "sha256": "ff913eda77faac4b",
+      "dhash": "52410ffdfdff75fe",
+      "duplicate_of": "optera_doc_04",
+      "dimensions": [
+        2304,
+        3610
+      ],
+      "bytes": 1229790,
+      "truncated": false,
+      "blur": null,
+      "brightness": null,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_06",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.6,
+    "data": {
+      "depot": "SARANGPUR",
+      "report_date": "2026-06-10",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": null,
+          "bus_no": "TAM2",
+          "work_done": "પાછું ઈન્જેક્ટ નોઝલ પાઈપ કે ચેક",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TAM96",
+          "work_done": "ક્લીનર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "ઈન્જીનીર એલન ઈસુર",
+          "bus_no": "TCM87",
+          "work_done": "(1) ગાડે કે ક્લચપ્લેટ ફુલસેટ ફીટીંગ ચેક",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "TAM31",
+          "work_done": "10 ગાડે કે આઈલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "14 ગાડે ગ્રીસમ ટેન્ક માં આઈલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": "1401 ફુલસેટ",
+          "bus_no": "TAM4A",
+          "work_done": "ઈન્જીનીર એલ્બ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": null,
+          "bus_no": "TAM31",
+          "work_done": "કે ડી ડ્રો ટેન્ક એલન ક્લીન પાઈપ ન",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": null,
+          "bus_no": "TAM13",
+          "work_done": "ડાલે કે આમલા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": "ડાલે કે આઈલ",
+          "bus_no": "TCM131",
+          "work_done": "89 લીટર CAIOS ના/J/MA/",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 418,
+          "cache_read": 0,
+          "usd": 0.0234
+        }
+      ],
+      "cost_usd": 0.02399,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_06",
+      "ok": true,
+      "reason": "",
+      "sha256": "f08ae14154a6b681",
+      "dhash": "8786bb8e8f8f69f8",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 77620,
+      "truncated": false,
+      "blur": 338.2,
+      "brightness": 156.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_07",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "depot": null,
+      "report_date": "2026-06-11",
+      "entries": [
+        {
+          "sr_no": "01",
+          "mechanic": null,
+          "bus_no": "TAM13",
+          "work_done": "clutch plate set change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "02",
+          "mechanic": null,
+          "bus_no": "TCM52",
+          "work_done": "cooling plate Assy change. mahaband tube 01 pce, benzo viser 02 pce, breather pipe broken.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "03",
+          "mechanic": null,
+          "bus_no": "TAM17",
+          "work_done": "HPR coolant hose change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "04",
+          "mechanic": null,
+          "bus_no": "MAM38",
+          "work_done": "All wheel brake set.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "05",
+          "mechanic": null,
+          "bus_no": "TCM69",
+          "work_done": "500 ml. steering oil, king pin oiling.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "06",
+          "mechanic": null,
+          "bus_no": "TCM47",
+          "work_done": "250 ml. brake oil topup 500 ml. stg oil topup clutch oiling.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "07",
+          "mechanic": null,
+          "bus_no": "TAM17",
+          "work_done": "horn setting, olpce fuse",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "08",
+          "mechanic": null,
+          "bus_no": "TCM60",
+          "work_done": "All spark pluge open and check.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "09",
+          "mechanic": null,
+          "bus_no": "TCM67",
+          "work_done": "oil pressure sensor fit.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "MAM030",
+          "work_done": "head light bulb 01 pce. head light setting.",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 301,
+          "cache_read": 0,
+          "usd": 0.020475
+        }
+      ],
+      "cost_usd": 0.021065,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_07",
+      "ok": true,
+      "reason": "",
+      "sha256": "fb25a915e4b5184f",
+      "dhash": "989c9e9e0e1a8007",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 74731,
+      "truncated": false,
+      "blur": 272.7,
+      "brightness": 153.3,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_08",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.82,
+    "data": {
+      "depot": "PALDI",
+      "report_date": "2026-06-12",
+      "entries": [
+        {
+          "sr_no": "(01)",
+          "mechanic": null,
+          "bus_no": "MAC31",
+          "work_done": "AC blower motor fit.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(02)",
+          "mechanic": null,
+          "bus_no": "TAM25",
+          "work_done": "01 pcs battery was faulty.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(03)",
+          "mechanic": null,
+          "bus_no": "TCM48",
+          "work_done": "04 pcs New spark pluge. 04 pcs new boot fit.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(04)",
+          "mechanic": null,
+          "bus_no": "TAM23",
+          "work_done": "All spark pluge and ignition coils are check",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(05)",
+          "mechanic": null,
+          "bus_no": "MAM42",
+          "work_done": "head light bulb 02 pcs",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(06)",
+          "mechanic": null,
+          "bus_no": "TCM52",
+          "work_done": "01 ignition Coil change, 01 pcr boot and 01 pcs spark plug change.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(07)",
+          "mechanic": null,
+          "bus_no": "MPM16",
+          "work_done": "01 pcs battery was faulty.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(08)",
+          "mechanic": null,
+          "bus_no": "TCM47",
+          "work_done": "clutch oiling, Gear oiling kin hip oiling.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(09)",
+          "mechanic": null,
+          "bus_no": "TAM23",
+          "work_done": "08 no hose clip 01 pcs.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(10)",
+          "mechanic": null,
+          "bus_no": "TCM42",
+          "work_done": "turbo Coolant hose change. Radiator clean, all Coolant hose lines are clean.",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 446,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000576
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2498,
+          "out": 330,
+          "cache_read": 0,
+          "usd": 0.02074
+        }
+      ],
+      "cost_usd": 0.021316,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_08",
+      "ok": true,
+      "reason": "",
+      "sha256": "b193212d77cf21d1",
+      "dhash": "ce8282c2a09c8cdc",
+      "duplicate_of": null,
+      "dimensions": [
+        890,
+        1280
+      ],
+      "bytes": 91330,
+      "truncated": false,
+      "blur": 613.8,
+      "brightness": 177.6,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_09",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.72,
+    "data": {
+      "depot": null,
+      "report_date": null,
+      "page_label": null,
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": null,
+          "bus_no": "MAM37",
+          "work_done": "Engine oil top up - 4 ltr. Coolant top up - 5 ltr.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "all General check Buses: all G.Buses. Brake setting, Clutch Release Bearing oiling, Radiator & Air filter Air clean.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "Delete- Complaint:-",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "TAM10",
+          "work_done": "Battery change. (Remove from TAM44) Arslen",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "TAM19",
+          "work_done": "Battery water check. Battery water Service.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "MAM30",
+          "work_done": "Horn switch change (New) ①, Horn push Clip change ②",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": null,
+          "bus_no": "TAM55",
+          "work_done": "door speed setting done.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": null,
+          "bus_no": "MAM48",
+          "work_done": "Spark plug change ④, Ignition Coil Rubber New ④",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": null,
+          "bus_no": "TAM10",
+          "work_done": "Starter motor change ①, Head light setting done",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "MAM14",
+          "work_done": "Spark plug clean & Refitting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "MAC-34",
+          "work_done": "front Show Repairing work in progress.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "all Buses, Coolant check & top up done.",
+          "material": null,
+          "struck_through": false
+        }
+      ]
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 361,
+          "cache_read": 0,
+          "usd": 0.021975
+        }
+      ],
+      "cost_usd": 0.022565,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_09",
+      "ok": true,
+      "reason": "",
+      "sha256": "1c9736bd9097e7de",
+      "dhash": "fcbc9c9c8c9480c3",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 98076,
+      "truncated": false,
+      "blur": 460.1,
+      "brightness": 149.0,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_10",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "depot": "PALDI",
+      "report_date": "2026-06-13",
+      "entries": [
+        {
+          "sr_no": "01",
+          "mechanic": null,
+          "bus_no": "TAM23",
+          "work_done": "axle packing change Rear left Side",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "02",
+          "mechanic": null,
+          "bus_no": "MAM38",
+          "work_done": "All wheel brake set",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "03",
+          "mechanic": null,
+          "bus_no": "TCM47",
+          "work_done": "steering pipe steering Cone to steering pump pipe change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "04",
+          "mechanic": null,
+          "bus_no": "TAM2",
+          "work_done": "All wheel brake Set.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "05",
+          "mechanic": null,
+          "bus_no": "TCM54",
+          "work_done": "Turbo Coolant hose change. adpce benzo bolt with. wiser, All Coolant hose lines are cheals.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "06",
+          "mechanic": null,
+          "bus_no": "TCM60",
+          "work_done": "hand brake work Complete",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "07",
+          "mechanic": null,
+          "bus_no": "MAM15",
+          "work_done": "All wheel brake set.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "08",
+          "mechanic": null,
+          "bus_no": "TCM52",
+          "work_done": "Radiator change, turbo Coolant hase change.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "09",
+          "mechanic": null,
+          "bus_no": "TAM25",
+          "work_done": "engine oil topup 15 ltr.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "TCM60",
+          "work_done": "Grip handle change 2a pce",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "MAM15",
+          "work_done": "Grip handle change 15 pce",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 432,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000562
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2360,
+          "out": 311,
+          "cache_read": 0,
+          "usd": 0.019575
+        }
+      ],
+      "cost_usd": 0.020137,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_10",
+      "ok": true,
+      "reason": "",
+      "sha256": "f7897f37e0a99119",
+      "dhash": "94a6e1a1f4c8ccd8",
+      "duplicate_of": null,
+      "dimensions": [
+        794,
+        1280
+      ],
+      "bytes": 98654,
+      "truncated": false,
+      "blur": 801.1,
+      "brightness": 182.7,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_11",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.6,
+    "data": {
+      "depot": "SARANGPUR",
+      "report_date": "2026-06-14",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "Kamlesh/Syama",
+          "bus_no": "TCM2",
+          "work_done": "ઇલેક્ટ્રીક ગાડી ગોઠવી ગાડા ગુજર મોબીલ LME ગળાળા ગાંઠ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Kamlesh/Syama",
+          "bus_no": "TCM12",
+          "work_done": "ગાર પાસ છોટ ઇલેક્ટ્રીક ચાલુ ૨ ૧૨ઓનર ગાળે ગેલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "Pathak/Basant",
+          "bus_no": "MAL-P",
+          "work_done": "પીઓ કુમો લીલા ગાડીલીકા ઇલેક્ટ્રીકા લીલા માળી પુંજા ઓમાસનું કાળુ સ્ટીલનર પાલો નદીપાળ દીનીલાળ નર ઉવાળા ગામે ગાળી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "DTH",
+          "work_done": "GTZLa કા ઇમાઇ વાલાળ ઓઇ કા ઇમાઇ બાલાળ",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 389,
+          "cache_read": 0,
+          "usd": 0.022675
+        }
+      ],
+      "cost_usd": 0.023265,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_11",
+      "ok": true,
+      "reason": "",
+      "sha256": "2d71c336273ea4eb",
+      "dhash": "d0fa3b19098b63e1",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 97412,
+      "truncated": false,
+      "blur": 728.7,
+      "brightness": 158.2,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_12",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.65,
+    "data": {
+      "depot": null,
+      "report_date": "2025-06-04",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "Tay 9",
+          "bus_no": "TCM 62",
+          "work_done": "Clutch oil change",
+          "material": "56.64",
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Tay 9",
+          "bus_no": "TCM 44",
+          "work_done": "Clutch Mix Remover",
+          "material": "Std ml.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "Tay 9",
+          "bus_no": null,
+          "work_done": "Engine oil top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": "Tay 9",
+          "bus_no": null,
+          "work_done": "Coolant top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": "mey 15",
+          "bus_no": null,
+          "work_done": "Engine oil top up",
+          "material": "2.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": "mey 15",
+          "bus_no": null,
+          "work_done": "Steering oil top up",
+          "material": "5.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": "Tay 13",
+          "bus_no": null,
+          "work_done": "Coolant top up lo.ltr.",
+          "material": "Std ml.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": "Tay 13",
+          "bus_no": null,
+          "work_done": "Engine Brush oil pipe R.light",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": "Tay 41",
+          "bus_no": null,
+          "work_done": "Engine oil top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": "Tay 41",
+          "bus_no": null,
+          "work_done": "Clutch oil top up",
+          "material": "2.60 ml.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": "Tay 41",
+          "bus_no": null,
+          "work_done": "Coolant top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": "mey 41",
+          "bus_no": null,
+          "work_done": "Engine oil top up",
+          "material": "5.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "13",
+          "mechanic": "mey 41",
+          "bus_no": null,
+          "work_done": "Coolant top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "14",
+          "mechanic": "Tay 9",
+          "bus_no": null,
+          "work_done": "Clutch oil top up 250 ml.",
+          "material": "Std ml.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "15",
+          "mechanic": "Tay 9",
+          "bus_no": null,
+          "work_done": "Clutch Mix Remover top up",
+          "material": "500 ml.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "16",
+          "mechanic": "Tay 8",
+          "bus_no": null,
+          "work_done": "Steering oil top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "17",
+          "mechanic": "Tay 8",
+          "bus_no": null,
+          "work_done": "Engine oil top up",
+          "material": "3.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "18",
+          "mechanic": "Tay 8",
+          "bus_no": null,
+          "work_done": "Coolant top up",
+          "material": "5.ltr.",
+          "struck_through": false
+        },
+        {
+          "sr_no": "19",
+          "mechanic": "Tay 8",
+          "bus_no": null,
+          "work_done": "Steering oil top up",
+          "material": "260 ml.",
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 64"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 515,
+          "cache_read": 0,
+          "usd": 0.025825
+        }
+      ],
+      "cost_usd": 0.026415,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_12",
+      "ok": true,
+      "reason": "",
+      "sha256": "f9b6cc73d63b8fdb",
+      "dhash": "c0fa8aca72f8fc90",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 103798,
+      "truncated": false,
+      "blur": 381.4,
+      "brightness": 158.9,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_13",
+    "doc_class": "duplicate",
+    "status": "refused",
+    "confidence": 1.0,
+    "data": null,
+    "refusal": {
+      "reason": "duplicate:near",
+      "observed": "Rejected at preflight without any model call. Duplicate of optera_doc_08"
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [],
+      "cost_usd": 0,
+      "stages": [
+        "preflight:free_reject"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_13",
+      "ok": false,
+      "reason": "duplicate:near",
+      "sha256": "b85a01ad0823ee6a",
+      "dhash": "ce8282c2a09c8cdc",
+      "duplicate_of": "optera_doc_08",
+      "dimensions": [
+        2304,
+        3312
+      ],
+      "bytes": 698368,
+      "truncated": false,
+      "blur": null,
+      "brightness": null,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_14",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.78,
+    "data": {
+      "depot": "PALDI",
+      "report_date": "2026-06-14",
+      "entries": [
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TCM.06",
+          "work_done": "બ્રેક સર્વિસ કીયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TCM-Ex1",
+          "work_done": "નવા બોડય ખોર મરોમ્મત સીટ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "MAM47",
+          "work_done": "01 pcr battery was faulty",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM47",
+          "work_done": "cell, alternator, battery was checked",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "MAM19",
+          "work_done": "driver cabin fan was faulty",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "MAM21",
+          "work_done": "drive cabin fan wiring Repair",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM26",
+          "work_done": "01 pcr spark plug change. 01 pcr head light bulb change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM24",
+          "work_done": "throttle body change with",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "MAM18",
+          "work_done": "starter motor Repair, 01pcr starter solenoid change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM12",
+          "work_done": "fan whisckus wiring Repair. 01 pcr shocket new",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 304,
+          "cache_read": 0,
+          "usd": 0.02055
+        }
+      ],
+      "cost_usd": 0.02114,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_14",
+      "ok": true,
+      "reason": "",
+      "sha256": "dc2d540b7321e871",
+      "dhash": "d4e8fede9e9acaf0",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 110717,
+      "truncated": false,
+      "blur": 435.4,
+      "brightness": 159.7,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_15",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.78,
+    "data": {
+      "depot": "MEMCO",
+      "report_date": "2020-06-15",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "Nareshbhi",
+          "bus_no": "42",
+          "work_done": "memco gas trasfar",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "Asay",
+          "bus_no": "28",
+          "work_done": "Nagarwel mandir gas trasfar",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "Om Parkash",
+          "bus_no": "11",
+          "work_done": "Haridarsan \" \"",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": "4",
+          "mechanic": "Rafiq.",
+          "bus_no": "14",
+          "work_done": "Sawminarayan \" \"",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "9",
+          "work_done": "Maninagar gear Cable change 15100",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "12",
+          "work_done": "Brek Setting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "45",
+          "work_done": "Coolant Change 15 liter",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "56",
+          "work_done": "Clutch booster Chek. Running",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "74",
+          "work_done": "Tarbo Change inter Cooler Saaf kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": "Girdhari",
+          "bus_no": "45",
+          "work_done": "flywhel Sencer, gear Sencer Saaf kiye.",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": "5",
+          "mechanic": "Tejinder",
+          "bus_no": null,
+          "work_done": "Rear door Washy chek ok.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "58",
+          "work_done": "Dast bord meter fitting kiye",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "11",
+          "work_done": "Haridarsan fanbelt tight kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "18",
+          "work_done": "R.R.T.S door Air Lekage Bond kiya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "42",
+          "work_done": "Manmochar Rasta Se laya",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "22",
+          "work_done": "Wlcer motor new fitting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "15",
+          "work_done": "Door chek ok.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "12",
+          "work_done": "Rear door Setting",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "7",
+          "work_done": "Rear door Air lekage Close.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "34",
+          "work_done": "Head light Blub 2, Side light Blub 2",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "1 Side light holder, MAC-47 ka horn chalu",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "Front Wiring fitting.",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 525,
+          "cache_read": 0,
+          "usd": 0.026075
+        }
+      ],
+      "cost_usd": 0.026665,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_15",
+      "ok": true,
+      "reason": "",
+      "sha256": "900c42b913406164",
+      "dhash": "e0fcdcd4c494d4d0",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 65923,
+      "truncated": false,
+      "blur": 188.2,
+      "brightness": 154.0,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_16",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.42,
+    "data": {
+      "depot": "DEPOT-ACHLIK",
+      "report_date": "2025-06-19",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "TAM 5",
+          "bus_no": "38.19",
+          "work_done": "50.04",
+          "material": "28.12",
+          "struck_through": true
+        },
+        {
+          "sr_no": "2",
+          "mechanic": "TAM 8",
+          "bus_no": "V4.23",
+          "work_done": "V4.08",
+          "material": "V8.08",
+          "struck_through": true
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "TAM 10",
+          "bus_no": "3V.0V",
+          "work_done": "V8.22",
+          "material": "25.82",
+          "struck_through": true
+        },
+        {
+          "sr_no": "4",
+          "mechanic": "TAM 12",
+          "bus_no": "0V.0V",
+          "work_done": "30.19.03",
+          "material": "35.76",
+          "struck_through": true
+        },
+        {
+          "sr_no": "5",
+          "mechanic": "TAM 43",
+          "bus_no": "65.03",
+          "work_done": "01.16.0.08",
+          "material": "15.08",
+          "struck_through": true
+        },
+        {
+          "sr_no": "6",
+          "mechanic": "TAM 48",
+          "bus_no": "0V.0V",
+          "work_done": "28.60.08",
+          "material": "5V.08",
+          "struck_through": true
+        },
+        {
+          "sr_no": "7",
+          "mechanic": "TAM 81",
+          "bus_no": "28.33",
+          "work_done": "33.65.02",
+          "material": "V0.06",
+          "struck_through": true
+        },
+        {
+          "sr_no": "8",
+          "mechanic": "TAM 28",
+          "bus_no": "V1.VV",
+          "work_done": "32.04.55",
+          "material": "V6.86",
+          "struck_through": true
+        },
+        {
+          "sr_no": "9",
+          "mechanic": "TAM 32",
+          "bus_no": "V4.V4",
+          "work_done": "30.12.01",
+          "material": "59.08",
+          "struck_through": true
+        },
+        {
+          "sr_no": "10",
+          "mechanic": "TAM VV",
+          "bus_no": "4.1.12",
+          "work_done": "26.03.08",
+          "material": "35.08",
+          "struck_through": true
+        },
+        {
+          "sr_no": "11",
+          "mechanic": "TAM V2",
+          "bus_no": "48.5V",
+          "work_done": "65.03.80",
+          "material": "V0.33",
+          "struck_through": true
+        },
+        {
+          "sr_no": "12",
+          "mechanic": "TAM V4",
+          "bus_no": "36.3V",
+          "work_done": "31.08.55",
+          "material": "V8.34",
+          "struck_through": true
+        },
+        {
+          "sr_no": "13",
+          "mechanic": "TAM 08 10",
+          "bus_no": "3V.12",
+          "work_done": "30.03.V0",
+          "material": "V8.28",
+          "struck_through": true
+        },
+        {
+          "sr_no": "14",
+          "mechanic": "TAM V4",
+          "bus_no": "26.48.03",
+          "work_done": "01.30.1.58",
+          "material": "39.63",
+          "struck_through": true
+        },
+        {
+          "sr_no": "15",
+          "mechanic": "TAM V8",
+          "bus_no": null,
+          "work_done": null,
+          "material": "50.09",
+          "struck_through": true
+        },
+        {
+          "sr_no": "16",
+          "mechanic": "TAM V4",
+          "bus_no": null,
+          "work_done": null,
+          "material": "35.99",
+          "struck_through": true
+        },
+        {
+          "sr_no": "17",
+          "mechanic": "TAM 04",
+          "bus_no": null,
+          "work_done": null,
+          "material": "6.92",
+          "struck_through": true
+        },
+        {
+          "sr_no": "18",
+          "mechanic": "TAM 04",
+          "bus_no": null,
+          "work_done": null,
+          "material": "39.03",
+          "struck_through": true
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 488,
+          "cache_read": 0,
+          "usd": 0.02515
+        }
+      ],
+      "cost_usd": 0.02574,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_16",
+      "ok": true,
+      "reason": "",
+      "sha256": "edf2dd3a505c2a36",
+      "dhash": "94b8fefefefebefe",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 111129,
+      "truncated": false,
+      "blur": 342.5,
+      "brightness": 161.4,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_17",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.62,
+    "data": {
+      "depot": "VADAJ",
+      "report_date": "2026-06-16",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "Pathak / Basant",
+          "bus_no": "TCM35",
+          "work_done": "સાઈલેન્સર લાઈનીંગ ગોઠ સફાઈ કીયા ગામા ઠીક -લાઈન બીજાના",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TCM99",
+          "work_done": "TCM35 કી ઠીક રા-રાઈટ કીયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": "Kamlesh / Khushal / Syamu",
+          "bus_no": "TCM59",
+          "work_done": "પમસ રે લીલના કરા પાઈપ -લાઈન 1/2 ટાકો લી આપાટ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "TCM42",
+          "work_done": "STO આઈ Hd પડતાર લી લીતાડીતા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "TCM43",
+          "work_done": "22 સાઈલા ગીયાર -લીમારગ 2ની આપપાલીયા ના પાલા ને લગાલી રહેના ગાડી ઠીકાર માટ ના ના ગયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "TCM28",
+          "work_done": "ફુમ લાઈલી -ટેલ ના ગુરુ22 લી માટ લાઈલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": "Ali Bhai / Ruoyu",
+          "bus_no": null,
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": null,
+          "bus_no": "TCM20",
+          "work_done": "5009 રા આઈલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": null,
+          "bus_no": "TCM22",
+          "work_done": "8009 2ની આપાલ 2ાલ6 ફના ટેપીલીટ લાલા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "TCM25",
+          "work_done": "4ાલ6 લી ટેલા ફુલાર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "TCM35",
+          "work_done": "ટાલ6 લી ટલ6 ફુના 3ાલ6 ગાપાર આપાલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": "R.Kailash / B.Parmar",
+          "bus_no": null,
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "13",
+          "mechanic": null,
+          "bus_no": "TCM50",
+          "work_done": "ઉપર ના પદી ના -ટ ડીના ઉગાડ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "14",
+          "mechanic": null,
+          "bus_no": "MAC-1",
+          "work_done": "પીટ આપા 2ઠીS લીલપ લાટલીલ ગીલર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "15",
+          "mechanic": null,
+          "bus_no": "TCM30",
+          "work_done": "ઉ4ટ ના પાગાલ ટીલર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "16",
+          "mechanic": null,
+          "bus_no": "TCM2",
+          "work_done": "આપ ઠીલા ના 4ાપાપ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "17",
+          "mechanic": "AMZ / MPIM",
+          "bus_no": null,
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "18",
+          "mechanic": null,
+          "bus_no": "TCM35",
+          "work_done": "આવી પાટા પાઈટર લાઈલર રાપા તાઈના ડાના",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "19",
+          "mechanic": "Electrician",
+          "bus_no": "Hitesh, Nilesh",
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "20",
+          "mechanic": null,
+          "bus_no": "TCM43",
+          "work_done": "સબલીટર લગ લાપા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "21",
+          "mechanic": null,
+          "bus_no": "TCM6",
+          "work_done": "લીફા લાફ, લાલા લીલ/ લીલકેજ લગ લાપા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "22",
+          "mechanic": null,
+          "bus_no": "TCM22",
+          "work_done": "પવી ના લાપા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "23",
+          "mechanic": null,
+          "bus_no": "TCM50",
+          "work_done": "રાલીલ પાલના સાપાલ લાલફ ફી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "24",
+          "mechanic": null,
+          "bus_no": "TCM12",
+          "work_done": "NON pickup Chek xy plug પાલલાલ ના ઠીલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "25",
+          "mechanic": null,
+          "bus_no": "TCM7",
+          "work_done": "NON pickup લ લી લીલ plug પાલલાલ લી ખી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "26",
+          "mechanic": null,
+          "bus_no": "TCM20",
+          "work_done": "ઠીલા લી ગાલા લાલ પાલાલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "27",
+          "mechanic": null,
+          "bus_no": "TCM50",
+          "work_done": "પાપ પલ લાફ ના ગયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "28",
+          "mechanic": null,
+          "bus_no": "TCM51",
+          "work_done": "પાપા ના ના લાપા",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 1154,
+          "cache_read": 0,
+          "usd": 0.0418
+        }
+      ],
+      "cost_usd": 0.04239,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_17",
+      "ok": true,
+      "reason": "",
+      "sha256": "0d0054666286ff73",
+      "dhash": "d44c4e9edededefe",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 125369,
+      "truncated": false,
+      "blur": 739.8,
+      "brightness": 161.3,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_18",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.82,
+    "data": {
+      "depot": "PALDI",
+      "report_date": "2025-06-19",
+      "entries": [
+        {
+          "sr_no": "01",
+          "mechanic": null,
+          "bus_no": "MAM43",
+          "work_done": "ADC5108ZZN17329 01 pce battery change.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "02",
+          "mechanic": null,
+          "bus_no": "MAM38",
+          "work_done": "02 pce battery change. ADC5121A119579 - Powerzone AEA6217A119962 - Powerzone",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "03",
+          "mechanic": null,
+          "bus_no": "TAM25",
+          "work_done": "02 pce battery change. ADC5121A119572 - Powerzone. AEA6217A119960 - Powerzone.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "04",
+          "mechanic": null,
+          "bus_no": "TAM26",
+          "work_done": "driver Cabin fan plat Anail.",
+          "material": null,
+          "struck_through": true
+        },
+        {
+          "sr_no": "05",
+          "mechanic": null,
+          "bus_no": "MAM39",
+          "work_done": "front oxygen temp. Sensor. shocket fitted.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "06",
+          "mechanic": null,
+          "bus_no": "MAM48",
+          "work_done": "Rear left brake light. bulb. change 01 pce.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "07",
+          "mechanic": null,
+          "bus_no": "TAM13",
+          "work_done": "front door switch change. 01 pce.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "08",
+          "mechanic": null,
+          "bus_no": "TAM36",
+          "work_done": "cell, Alternator battery check.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "09",
+          "mechanic": null,
+          "bus_no": "MAM32",
+          "work_done": "temprature Sensor changed.",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 315,
+          "cache_read": 0,
+          "usd": 0.020825
+        }
+      ],
+      "cost_usd": 0.021415,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_18",
+      "ok": true,
+      "reason": "",
+      "sha256": "7dca89bad13645a7",
+      "dhash": "707c1c1cf4d8c282",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 108679,
+      "truncated": false,
+      "blur": 273.5,
+      "brightness": 144.2,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_19",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.42,
+    "data": {
+      "depot": "SARANGPUR",
+      "report_date": "2026-06-17",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": null,
+          "bus_no": "TAM9",
+          "work_done": "ફલાઈવ્હીલ, ગાસ ગાળિયા",
+          "material": "C.9 (કવર)",
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TAM9",
+          "work_done": "ગ્લાસ ફલાય ઉપરાઈટીંગ કિયા જો લાગુમાં ઉપ ખાલી એજ સેન્ડ કિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": null,
+          "bus_no": "TCM9",
+          "work_done": "ફ્લાસ કે સીલર લગાવે ટીયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "TCM14",
+          "work_done": "ગ્લાસ લેક કિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "TCM59",
+          "work_done": "ફ્લાયમેન લીકેજ ઉતરા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "TAM15",
+          "work_done": "ગાડ સીલર વિંગ STAI",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": null,
+          "bus_no": "TCM32",
+          "work_done": "ઉકરડા ઉપરાઈટ ટીકાડાય ગાડ DIAI",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": "રામ કૈલાશ",
+          "bus_no": null,
+          "work_done": "ભરત ભાઈ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": null,
+          "bus_no": "TCM28",
+          "work_done": "ગીર કા ફ્લાયલા કા EESM ગિર કિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "TAM34",
+          "work_done": "ગીર કા ફ્લાયલા કા લેકિયા ટાઈમ ટિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "TAM15",
+          "work_done": "ગીર કા ફ્લાયલા કા ગીલા ગુલેડી ગીર ટિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": null,
+          "bus_no": "TCM18",
+          "work_done": "ઈન્ડીકેટર ગાડી કા કાડી ટાઈમ ટિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "13",
+          "mechanic": null,
+          "bus_no": "TCM9",
+          "work_done": "ફ્લાકિયા ગવાલી ટિયા TAMI",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "14",
+          "mechanic": null,
+          "bus_no": "TCM58",
+          "work_done": "ગીર કા ફ્લાયલી કા લાલ સીલીંગ કિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "15",
+          "mechanic": null,
+          "bus_no": "MAM10",
+          "work_done": "ગીર કા ફ્લાયલા ના ઘરા વેર ટિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "16",
+          "mechanic": null,
+          "bus_no": "TCM14",
+          "work_done": "ઉપર ગીર ફ્લાયલા સરખા ટિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "17",
+          "mechanic": null,
+          "bus_no": "TCM32",
+          "work_done": "ઉપર કા ફ્લાયલા સુધી કિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "18",
+          "mechanic": null,
+          "bus_no": "TCM34",
+          "work_done": "ઉપર કા ફ્લાયલી લેકિયા",
+          "material": "TCM11 ઉપર લીલાવ કવર ગિર કિયા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "19",
+          "mechanic": "Alibhai Mech",
+          "bus_no": null,
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "20",
+          "mechanic": null,
+          "bus_no": "TCM42",
+          "work_done": "Tyre Rock 01/2/21 - 1 જા કાર હેડી ગાડે Engine oil 2 mtr કાર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "21",
+          "mechanic": null,
+          "bus_no": "TCM39",
+          "work_done": "Starting oil 500 0/21 કાર 250 0/21 ગુદ oil કાર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "22",
+          "mechanic": null,
+          "bus_no": "TCM10",
+          "work_done": "Ges oil 2 mtr કાર Starting oil 500 0/21 15",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "23",
+          "mechanic": null,
+          "bus_no": "TCM51",
+          "work_done": "Engine oil 2 mtr ની",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "24",
+          "mechanic": null,
+          "bus_no": "TCM41",
+          "work_done": "01724 4/51 Crown oil 1 mtr 51 Engine oil 2 mtr કાર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "25",
+          "mechanic": "Electrician",
+          "bus_no": null,
+          "work_done": null,
+          "material": "Hitesh, N/12M",
+          "struck_through": false
+        },
+        {
+          "sr_no": "26",
+          "mechanic": null,
+          "bus_no": "TCM58",
+          "work_done": "ESMI ગેલ ગની ગાવલી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "27",
+          "mechanic": null,
+          "bus_no": "MAM10",
+          "work_done": "લગાલા પાઈલાઈ EXAIA ઓકિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "28",
+          "mechanic": null,
+          "bus_no": "TCM8",
+          "work_done": "લગાલા પાલાની Edial ગેલ ના",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "29",
+          "mechanic": null,
+          "bus_no": "TCM21",
+          "work_done": "લગાલ પીકઅપ Check ols 2012 પાલીગાને ગેલન",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "30",
+          "mechanic": null,
+          "bus_no": "TCM2",
+          "work_done": "ગા Bexel ની ols",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "31",
+          "mechanic": null,
+          "bus_no": "TCM24",
+          "work_done": "લગાલા લવાલે ગેલ ની",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "32",
+          "mechanic": null,
+          "bus_no": "TCM39",
+          "work_done": "કિલાલ ગાલા ગની ગાલાને",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "33",
+          "mechanic": null,
+          "bus_no": "TCM50",
+          "work_done": "ગાલિક ગાલે ના ગાલી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "34",
+          "mechanic": null,
+          "bus_no": "TCM51",
+          "work_done": "ESMI પાલાગાલી ગાલાને",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "35",
+          "mechanic": null,
+          "bus_no": "MAC84",
+          "work_done": "TCM ગાલાને ના કી",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 1406,
+          "cache_read": 0,
+          "usd": 0.0481
+        }
+      ],
+      "cost_usd": 0.04869,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_19",
+      "ok": true,
+      "reason": "",
+      "sha256": "801533fd7e855aa0",
+      "dhash": "30f0dfd7cfc4c8e4",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 132276,
+      "truncated": false,
+      "blur": 655.4,
+      "brightness": 143.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_20",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.82,
+    "data": {
+      "depot": "PALDI",
+      "report_date": "2025-06-16",
+      "entries": [
+        {
+          "sr_no": "12.",
+          "mechanic": null,
+          "bus_no": "MMM17",
+          "work_done": "All wheel brake set",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "13.",
+          "mechanic": null,
+          "bus_no": "MMM38",
+          "work_done": "Front Right Side tyre puncture Repair Complete.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "14.",
+          "mechanic": null,
+          "bus_no": "MPM30",
+          "work_done": "Rear Right outer tyre puncture made and fixed. in MMM38. Rear Right outer Side.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "15.",
+          "mechanic": null,
+          "bus_no": "TPM13",
+          "work_done": "Rear left outer tyre puncture made and fix it.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "16.",
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "20 buses air fill Complete.",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 173,
+          "cache_read": 0,
+          "usd": 0.017275
+        }
+      ],
+      "cost_usd": 0.017865,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_20",
+      "ok": true,
+      "reason": "",
+      "sha256": "b960b223f8d946bb",
+      "dhash": "babcbec8c49a9ad8",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 60348,
+      "truncated": false,
+      "blur": 187.7,
+      "brightness": 152.6,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_21",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.65,
+    "data": {
+      "depot": "SARANGPUR",
+      "report_date": "2025-06-19",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": null,
+          "bus_no": "TAM34",
+          "work_done": "આગે કાર લયીયા ઓલીH ટાઈટ કિયાT",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TCM65",
+          "work_done": "આગે પિછે ના સગળાણા ડિયીણ કિયાT",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": null,
+          "bus_no": "TCM46",
+          "work_done": "પિછે ના સગળાણા પિપીળા કિયાT",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "Tem6",
+          "work_done": "ઓફીણા ઓલીH ટાઈટ કિયાT",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "Tem8",
+          "work_done": "પિછે ના સગળાણા ડબીળા કિયાT",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "TCM91",
+          "work_done": "આગે ના ગુજાર ભયા ભળા ઓર પિટકાળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": null,
+          "bus_no": "TCM33",
+          "work_done": "ઓલ31 ઓલાH ૨ જગા ગુળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": null,
+          "bus_no": "Tem80",
+          "work_done": "પિછે કે ઓજપા ના ગળા ઓ ઓલલ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": null,
+          "bus_no": "Tem28",
+          "work_done": "આગે ના ભાલો કુજાર પિલેલાકાળે ટાઈટ કિયાT",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "ફાળાણા, સાસુ લાઈપા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "TCM50",
+          "work_done": "ઈડલાર કીર લ્યાળી ળાઓનઓસાળ વિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "ગર લીલા જાર સાળા ઓલાઓસાળ વીલે કુજર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "જગ5 ટીળા કુળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "TAM15",
+          "work_done": "ગર લીલર ટાર ગાળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": null,
+          "bus_no": "Tem12",
+          "work_done": "ફોલ્ય કુળાળે ૨૦૦૯ ગાળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "13",
+          "mechanic": null,
+          "bus_no": "TCM35",
+          "work_done": "ફુળાળો કે ઓીટ ફીર જીળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "14",
+          "mechanic": null,
+          "bus_no": "TOM56",
+          "work_done": "૦,૮૮.૨૦ ૨ કુળા ઓાળીળ ઓક",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "15",
+          "mechanic": null,
+          "bus_no": "TAM25",
+          "work_done": "૨૯",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "16",
+          "mechanic": null,
+          "bus_no": "MAM1",
+          "work_done": "કુળાળે ગીળ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": "Ali Bhai Vekhu",
+          "bus_no": null,
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM14,15,16,22,34",
+          "work_done": "ફુમલીલ ળાળીળળ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TPM22",
+          "work_done": "5ળા ઓીળા ઈળા ઓળાo",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TPM34",
+          "work_done": "5ળા ળાળેળાર ળો 5ાળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM14",
+          "work_done": "ગર ઈુળીલ ૧ ઓલ ગુળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM16",
+          "work_done": "આળી લેક કુટર પાકુ ળયા ડાળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "સ્યાળી ગાડો ળે ગર કુળીયો ઓાઈળ કુળીલે ચેક કિયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "stectઓીળા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAMn15",
+          "work_done": "ઓીલ ઈ5ઈ52 ળnect ok ળીળીળy chok ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TAM2",
+          "work_done": "ઓીલ ઈ5ડo ળાuળી chek ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "Tom2",
+          "work_done": "ઓીળ ઈ5ઈ8 ઓળાળીળ ઓેક ઓક",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "2m66",
+          "work_done": "26ળ ઈ8ઈ52 લાળઈળ ઓેક ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "2m18",
+          "work_done": "ળી 55ાળાળ સાળળાક ળળ ળાળયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "tom11",
+          "work_done": "55ાળાળ ઓ'ાળેક ઓી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "MPMH0",
+          "work_done": "Nom prkup check ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "tom30",
+          "work_done": "55ાળળળ ઓીળેક ઓાળેક ઓી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "TOM2",
+          "work_done": "લયાળ ળાકળ ળા 5ળાળળ ઓેક",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "tCmh6",
+          "work_done": "લળળ ળ16hળા 5લળાળ ઓેળા ઓી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": "Tum5",
+          "work_done": "ળળાળ ળ16ળળા 5ુળાળ ઓાળેક ઓી",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 1474,
+          "cache_read": 0,
+          "usd": 0.0498
+        }
+      ],
+      "cost_usd": 0.05039,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_21",
+      "ok": true,
+      "reason": "",
+      "sha256": "9eb62abf889f742a",
+      "dhash": "c4ccdeddcdcec6e4",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 191340,
+      "truncated": false,
+      "blur": 838.2,
+      "brightness": 150.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_22",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "depot": "PALDI",
+      "report_date": "2026-06-18",
+      "entries": [
+        {
+          "sr_no": "(8)",
+          "mechanic": null,
+          "bus_no": "TAM38",
+          "work_done": "Front Right Side brake Recbar change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(9)",
+          "mechanic": null,
+          "bus_no": "TAM28",
+          "work_done": "All wheel brake set",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(10)",
+          "mechanic": null,
+          "bus_no": "TAM12",
+          "work_done": "All wheel brake set",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(11)",
+          "mechanic": null,
+          "bus_no": "TAM06",
+          "work_done": "head light bulb change 01 pce.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(12)",
+          "mechanic": null,
+          "bus_no": "MAM44",
+          "work_done": "boost pressure Sensor change 01 pce.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(13)",
+          "mechanic": null,
+          "bus_no": "TAM47",
+          "work_done": "Combination Switch change 01 pce.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(14)",
+          "mechanic": null,
+          "bus_no": "TAM12",
+          "work_done": "head light wiring Repair",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(15)",
+          "mechanic": null,
+          "bus_no": "TAM13",
+          "work_done": "horn button change 01 pce.",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "(16)",
+          "mechanic": null,
+          "bus_no": "TAM23",
+          "work_done": "turbo Coolant pipe changed",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "Page 1"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 252,
+          "cache_read": 0,
+          "usd": 0.01925
+        }
+      ],
+      "cost_usd": 0.01984,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_22",
+      "ok": true,
+      "reason": "",
+      "sha256": "c0d702f4469c3d5d",
+      "dhash": "98d89898d8c8b8f9",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 96246,
+      "truncated": false,
+      "blur": 200.5,
+      "brightness": 152.9,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_23",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.25,
+    "data": {
+      "depot": null,
+      "report_date": null,
+      "entries": [
+        {
+          "sr_no": "Taxi 33",
+          "mechanic": "mandy",
+          "bus_no": "Horn",
+          "work_done": "Horn wiring",
+          "material": "wiper motor (m)",
+          "struck_through": true
+        },
+        {
+          "sr_no": "Taxi 4",
+          "mechanic": "",
+          "bus_no": "Gas pressure Sensor Socket change",
+          "work_done": "wiper setting done",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 02",
+          "mechanic": "",
+          "bus_no": "wiper Nuro fitting",
+          "work_done": "wiper setting done",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 18",
+          "mechanic": "mandy",
+          "bus_no": "wiper setting done",
+          "work_done": "Horn Setting done",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 18",
+          "mechanic": "",
+          "bus_no": "Batty Bottom Service & water check",
+          "work_done": "Left New fitting",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "mandy",
+          "bus_no": "Body light Switch Nuro fitting",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Speedo relay change (Nuro)",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 40",
+          "mechanic": "",
+          "bus_no": "wiper Relay change",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 68",
+          "mechanic": "mandy",
+          "bus_no": "Speedo plug check & clm Refitting",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Body pressing change wiring Repair",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 94",
+          "mechanic": "mandy",
+          "bus_no": "Engine wiring change",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "(Tail) brake",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 8",
+          "mechanic": "",
+          "bus_no": "Handly Body wiring Repair & Refitting",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 39",
+          "mechanic": "",
+          "bus_no": "Horn wiring Repair & Switch change",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 11",
+          "mechanic": "mandy",
+          "bus_no": "Engine Bonath change Repair & Refilled",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 28",
+          "mechanic": "",
+          "bus_no": "",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 05",
+          "mechanic": "",
+          "bus_no": "Green cover change Nuro",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 32",
+          "mechanic": "",
+          "bus_no": "Sh. clean Spread setting done",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Rear Side passenger seat side Retable",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Grip handle Fitted",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 16",
+          "mechanic": "mandy",
+          "bus_no": "Engine Bonath Repair & Fitted",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "change the belt Repair",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "Taxi 68",
+          "mechanic": "",
+          "bus_no": "Rear Left Side Suspect pipe change",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Left Side Side Glass change",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "mandy",
+          "bus_no": "",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Right Side Side Glass change",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "Front Shawa Repair & welding work",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        },
+        {
+          "sr_no": "",
+          "mechanic": "",
+          "bus_no": "all Side Body finishing",
+          "work_done": "",
+          "material": "",
+          "struck_through": false
+        }
+      ],
+      "page_label": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": false,
+      "issues": [
+        "entries_missing_work_done:25/30"
+      ],
+      "severity": 0.3
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 571,
+          "cache_read": 0,
+          "usd": 0.027225
+        }
+      ],
+      "cost_usd": 0.027815,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "json:unfenced",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_23",
+      "ok": true,
+      "reason": "",
+      "sha256": "ab506625370d6349",
+      "dhash": "c0828090808ac2c6",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 122150,
+      "truncated": false,
+      "blur": 472.6,
+      "brightness": 150.7,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_24",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.62,
+    "data": {
+      "depot": null,
+      "report_date": "2025-06-21",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": "लाल",
+          "bus_no": "TAM-7",
+          "work_done": "લાઈટ લેવ લો સ્પિલજ",
+          "material": "લાઈટ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TAM-3",
+          "work_done": "રીયર ટાયર લો ઓવર",
+          "material": "ટાયર 2 નંગ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": null,
+          "bus_no": "TAM-8",
+          "work_done": "સાઈડ ફ્યુઝ લો ઓવર",
+          "material": "ફ્યુઝ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "TAM-38",
+          "work_done": "લાઈટ રીપેર લો ઓવર",
+          "material": "માળા",
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "TAM-38",
+          "work_done": "ટાયર 28 ટ્યુબ લો ઓવર",
+          "material": "ટ્યુબ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "TAM-34",
+          "work_done": "ઓઈલ ફીલ્ટર ચેન્જ",
+          "material": "ઓઈલ ફીલ્ટર",
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": null,
+          "bus_no": "TAM-33",
+          "work_done": "સ્ટાર્ટર મોટર રીપેર",
+          "material": "સ્ટાર્ટર",
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": null,
+          "bus_no": "TAM-16",
+          "work_done": "ગીયર લીવર બુશ ચેન્જ",
+          "material": "બુશ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "1",
+          "mechanic": null,
+          "bus_no": "TAM-44",
+          "work_done": "સાઈડ ગ્લાસ ફીટ",
+          "material": "ગ્લાસ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TAM-18",
+          "work_done": "બોડી રીપેર / ગોફલ",
+          "material": "ગોફલ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": null,
+          "bus_no": "TAM-8",
+          "work_done": "ટાયર 28 ટ્યુબ ચેન્જ",
+          "material": "ટ્યુબ",
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": "TAM-34",
+          "work_done": "ઈન્જેક્ટર રીપેર",
+          "material": "ઈન્જેક્ટર",
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "TAM-33",
+          "work_done": "સ્ટાર્ટર ફીટીંગ",
+          "material": "સ્ટાર્ટર",
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "TAM-16",
+          "work_done": "ગીયર લીવર ફીટીંગ",
+          "material": "ગીયર",
+          "struck_through": false
+        }
+      ],
+      "page_label": "નામ 2"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 641,
+          "cache_read": 0,
+          "usd": 0.028975
+        }
+      ],
+      "cost_usd": 0.029565,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_24",
+      "ok": true,
+      "reason": "",
+      "sha256": "6a7277e2474ef0ba",
+      "dhash": "80828290808080e4",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 89446,
+      "truncated": false,
+      "blur": 193.3,
+      "brightness": 142.7,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_25",
+    "doc_class": "work_report",
+    "status": "extracted",
+    "confidence": 0.62,
+    "data": {
+      "depot": "VADAJ",
+      "report_date": "2026-06-22",
+      "entries": [
+        {
+          "sr_no": "1",
+          "mechanic": null,
+          "bus_no": "TAM-22",
+          "work_done": "પાના લગાવવું મશ લગા ગયા સાંધા પંજો દયા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "2",
+          "mechanic": null,
+          "bus_no": "TCM-29",
+          "work_done": "ઓફ મોટર લગા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "3",
+          "mechanic": null,
+          "bus_no": "TCM-42",
+          "work_done": "ઓફ મોટર લગા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "4",
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "લગાસ મોટર TCM-9,12,20,22,28",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "5",
+          "mechanic": null,
+          "bus_no": "TCM-9",
+          "work_done": "Engine oil 2 mtr STR ભાળો 2 mtr રીળ સ્ટાયરીંગ ol100",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "6",
+          "mechanic": null,
+          "bus_no": "TCM-22",
+          "work_done": "Engine oil 2 ltr રીળ ભાળો 1 mtr",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "7",
+          "mechanic": null,
+          "bus_no": "TCM-28",
+          "work_done": "Engine oil 2 mtr રીળ ભાળો 2 mtr",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "8",
+          "mechanic": null,
+          "bus_no": "TCM-12",
+          "work_done": "staring oil 250 ગ્રામ રીળ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "9",
+          "mechanic": null,
+          "bus_no": "TCM-20",
+          "work_done": "staring ol 100 ગ્રામ રીળ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "10",
+          "mechanic": null,
+          "bus_no": "TCM-11",
+          "work_done": "ઓફ લગેલ ઓફ લગા",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": "Nilesh",
+          "bus_no": null,
+          "work_done": "Electrician",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "11",
+          "mechanic": null,
+          "bus_no": "TCM36",
+          "work_done": "ઓલટરનેટર ગાડ નાખવું",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "12",
+          "mechanic": null,
+          "bus_no": "MAC2",
+          "work_done": "2961 ઓળ નાખની",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "13",
+          "mechanic": null,
+          "bus_no": "DM21",
+          "work_done": "લોરી ભાળી મીર કરી આલટરનેટ બાંધેજ બાયર",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": null,
+          "bus_no": null,
+          "work_done": "કરેલ કામ ગાડી ભાળુ કરી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "14",
+          "mechanic": null,
+          "bus_no": "TCM58",
+          "work_done": "ટાયર 2 મીર dk",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "15",
+          "mechanic": null,
+          "bus_no": "TAM35",
+          "work_done": "ટીof મીર કરી",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "16",
+          "mechanic": null,
+          "bus_no": "TCM11",
+          "work_done": "Nonpickup check ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "17",
+          "mechanic": null,
+          "bus_no": "DM2",
+          "work_done": "મીર બીટર check ok",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "18",
+          "mechanic": null,
+          "bus_no": "TCM7",
+          "work_done": "Nonpickup checkols રળા ઓળીને મીર ભો",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "19",
+          "mechanic": null,
+          "bus_no": "TCM9",
+          "work_done": "ટાયર crown and crown",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": null,
+          "mechanic": "Dashrath",
+          "bus_no": "Bububhai Maulik Padhiaddi Nilad",
+          "work_done": null,
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "20",
+          "mechanic": null,
+          "bus_no": "TCM-2",
+          "work_done": "water pump મીર ભાળુ ઓળન ગોળીન",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "21",
+          "mechanic": null,
+          "bus_no": "TCM-64",
+          "work_done": "oil service Done 15 mtr Engine oil oil filter change And filter change",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "22",
+          "mechanic": null,
+          "bus_no": "TCM-92",
+          "work_done": "Coolant water 6 mtr Jr",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "23",
+          "mechanic": null,
+          "bus_no": "TCM-12",
+          "work_done": "Engine oil 5 mtr રીળ",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "24",
+          "mechanic": null,
+          "bus_no": "TCM-30",
+          "work_done": "Engine oil 2 mtr",
+          "material": null,
+          "struck_through": false
+        },
+        {
+          "sr_no": "25",
+          "mechanic": null,
+          "bus_no": "TAM-2",
+          "work_done": "Engine oil 3 mtr coolant water 5 mtr Jr",
+          "material": null,
+          "struck_through": false
+        }
+      ],
+      "page_label": "PTO"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2590,
+          "out": 913,
+          "cache_read": 0,
+          "usd": 0.035775
+        }
+      ],
+      "cost_usd": 0.036365,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->work_report",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_25",
+      "ok": true,
+      "reason": "",
+      "sha256": "b289978f66d1fd2b",
+      "dhash": "c0dcdcdcdcd6cef0",
+      "duplicate_of": null,
+      "dimensions": [
+        1080,
+        1440
+      ],
+      "bytes": 92728,
+      "truncated": false,
+      "blur": 192.2,
+      "brightness": 140.4,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_26",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.92,
+    "data": {
+      "vendor_name": "Anupam Enterprise",
+      "vendor_gstin": "24ABNPR5802P1Z2",
+      "vendor_phone": "9408008181",
+      "invoice_no": "AE/268/26-27",
+      "invoice_date": "2025-06-20",
+      "buyer_name": "Avtarsingh Mahendrasingh Ramgadia",
+      "vehicle_no": "GJ 06 AU 9885",
+      "line_items": [
+        {
+          "description": "XP1000 Batch: A1E6B242834 Batch: A1F6D402349 Fully Charged Battery Against Old Battery",
+          "hsn": "85071000",
+          "qty": 2,
+          "rate": 6610.17,
+          "amount": 13220.34
+        },
+        {
+          "description": "Output CGST @ 9%",
+          "hsn": null,
+          "qty": null,
+          "rate": 9,
+          "amount": 1189.83
+        },
+        {
+          "description": "Output SGST @ 9%",
+          "hsn": null,
+          "qty": null,
+          "rate": 9,
+          "amount": 1189.83
+        }
+      ],
+      "subtotal": 13220.34,
+      "tax_amount": 2379.66,
+      "total_amount": 15600.0,
+      "amount_in_words": "INR Fifteen Thousand Six Hundred Only",
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2670,
+          "out": 264,
+          "cache_read": 0,
+          "usd": 0.01995
+        }
+      ],
+      "cost_usd": 0.02054,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_26",
+      "ok": true,
+      "reason": "",
+      "sha256": "5d0a8afbc03d54e6",
+      "dhash": "717070f8b8fcde4f",
+      "duplicate_of": null,
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "bytes": 133693,
+      "truncated": false,
+      "blur": 455.8,
+      "brightness": 134.7,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_27",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.82,
+    "data": {
+      "vendor_name": "Sikotar Sarkar KIRAN GREASING SERVICE",
+      "vendor_gstin": null,
+      "vendor_phone": "96722 81501",
+      "invoice_no": null,
+      "invoice_date": "2026-06-28",
+      "buyer_name": null,
+      "vehicle_no": "GJ-06-AV-4045",
+      "line_items": [
+        {
+          "description": "ग्रीस गाडी में किया है",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": 200
+        }
+      ],
+      "subtotal": null,
+      "tax_amount": null,
+      "total_amount": 200,
+      "amount_in_words": null,
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000548
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2666,
+          "out": 156,
+          "cache_read": 0,
+          "usd": 0.01723
+        }
+      ],
+      "cost_usd": 0.017778,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_27",
+      "ok": true,
+      "reason": "",
+      "sha256": "721bb1dfddc4de67",
+      "dhash": "b0d81ba7e7e707bb",
+      "duplicate_of": null,
+      "dimensions": [
+        899,
+        1599
+      ],
+      "bytes": 118199,
+      "truncated": false,
+      "blur": 600.7,
+      "brightness": 138.7,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_28",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.92,
+    "data": {
+      "vendor_name": "TIWARI AUTO PARTS",
+      "vendor_gstin": null,
+      "vendor_phone": "87806 93146",
+      "invoice_no": "312",
+      "invoice_date": "2024-07-08",
+      "buyer_name": "DTC",
+      "vehicle_no": "GJ16AV 9065",
+      "line_items": [
+        {
+          "description": "DEF TATA",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": 1750
+        }
+      ],
+      "subtotal": null,
+      "tax_amount": null,
+      "total_amount": 1750,
+      "amount_in_words": null,
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000548
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2666,
+          "out": 141,
+          "cache_read": 0,
+          "usd": 0.016855
+        }
+      ],
+      "cost_usd": 0.017403,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_28",
+      "ok": true,
+      "reason": "",
+      "sha256": "71eaebee3811b5f7",
+      "dhash": "daaa6efafef24004",
+      "duplicate_of": null,
+      "dimensions": [
+        899,
+        1599
+      ],
+      "bytes": 113005,
+      "truncated": false,
+      "blur": 445.8,
+      "brightness": 145.8,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_29",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.89,
+    "data": {
+      "vendor_name": "SINDHI ASLAM IQBAL",
+      "vendor_gstin": null,
+      "vendor_phone": "8511952874 / 7567838303",
+      "invoice_no": "1380",
+      "invoice_date": "2026-06-15",
+      "buyer_name": "D.T.C",
+      "vehicle_no": "GJ16 AU6155",
+      "line_items": [
+        {
+          "description": "LAPTOP DIGNOSTIC",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": 500
+        }
+      ],
+      "subtotal": null,
+      "tax_amount": null,
+      "total_amount": 500,
+      "amount_in_words": null,
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2670,
+          "out": 153,
+          "cache_read": 0,
+          "usd": 0.017175
+        }
+      ],
+      "cost_usd": 0.017765,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_29",
+      "ok": true,
+      "reason": "",
+      "sha256": "365fb68c3b75be10",
+      "dhash": "1e7f7efefefe7e36",
+      "duplicate_of": null,
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "bytes": 204946,
+      "truncated": false,
+      "blur": 444.1,
+      "brightness": 133.9,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_30",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.56,
+    "data": {
+      "vendor_name": "SHIV SHAKTI MOTORS",
+      "vendor_gstin": "24AKWPP5497L1Z1",
+      "vendor_phone": "9427808435,8866786297",
+      "invoice_no": "GSTT/3402",
+      "invoice_date": "2026-07-20",
+      "buyer_name": "DASHMESH TRANSPORT COMPANY (D.T.C)",
+      "vehicle_no": "GJ05AU4001",
+      "line_items": [
+        {
+          "description": "885418052516 SET OF 2 FILTER",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "LST101L FUEL STAINER GLASSI (L)",
+          "hsn": "84212900",
+          "qty": 1.0,
+          "rate": "SET",
+          "amount": 677.97
+        },
+        {
+          "description": "HOSE CLIP STEEL HD",
+          "hsn": "84212900",
+          "qty": 1.0,
+          "rate": "Pcs",
+          "amount": 127.12
+        },
+        {
+          "description": "COTTON WEST CLOTH",
+          "hsn": "7307",
+          "qty": 2.0,
+          "rate": "Pcs",
+          "amount": 27.12
+        },
+        {
+          "description": "SIDE MIRROR STAND TC",
+          "hsn": "63101020",
+          "qty": 2.0,
+          "rate": "Pcs",
+          "amount": 10.0
+        },
+        {
+          "description": "SIDE MIRROR TURBO BIG RE701",
+          "hsn": "7009",
+          "qty": 1.0,
+          "rate": "Pcs",
+          "amount": 165.26
+        },
+        {
+          "description": "REVERSE HORN 24V TUK TUK IOTA",
+          "hsn": "7009",
+          "qty": 1.0,
+          "rate": "Pcs",
+          "amount": 144.07
+        },
+        {
+          "description": "DAMAR PATTI",
+          "hsn": "8531",
+          "qty": 1.0,
+          "rate": "Pcs",
+          "amount": 194.92
+        },
+        {
+          "description": "BRAKE FUEL 250ML TVS",
+          "hsn": "6807",
+          "qty": 7.0,
+          "rate": "FOOT",
+          "amount": 33.9
+        },
+        {
+          "description": "",
+          "hsn": "2710",
+          "qty": 1.0,
+          "rate": "Pcs",
+          "amount": 76.28
+        }
+      ],
+      "subtotal": 1697.16,
+      "tax_amount": 302.9,
+      "total_amount": 2000.0,
+      "amount_in_words": "Two Thousand Rupees Only",
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": false,
+      "issues": [
+        "total_mismatch:lines=1456.64 tax=302.9 total=2000.0"
+      ],
+      "severity": 0.35
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000548
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2666,
+          "out": 530,
+          "cache_read": 0,
+          "usd": 0.02658
+        }
+      ],
+      "cost_usd": 0.027128,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_30",
+      "ok": true,
+      "reason": "",
+      "sha256": "29b043134e086838",
+      "dhash": "84b6eecee2dad670",
+      "duplicate_of": null,
+      "dimensions": [
+        899,
+        1599
+      ],
+      "bytes": 232603,
+      "truncated": false,
+      "blur": 786.5,
+      "brightness": 136.6,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_31",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.91,
+    "data": {
+      "vendor_name": "M K MOTORS",
+      "vendor_gstin": "24AAOFM2723Q1ZT",
+      "vendor_phone": "9978982325",
+      "invoice_no": "CSRMKB3270000270",
+      "invoice_date": "2026-07-02",
+      "buyer_name": "DASHMESH TRANSPORT COMPANY",
+      "vehicle_no": "GJ16AU6145",
+      "line_items": [
+        {
+          "description": "HKCAAG077 HOSE KIT FOR TILTING SLR BSW",
+          "hsn": "40092200",
+          "qty": "1.000",
+          "rate": 544.92,
+          "amount": 544.92
+        }
+      ],
+      "subtotal": 544.92,
+      "tax_amount": 98.08,
+      "total_amount": 643,
+      "amount_in_words": "Rupees Six Hundred Forty Three and Zero Paise Only",
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2670,
+          "out": 200,
+          "cache_read": 0,
+          "usd": 0.01835
+        }
+      ],
+      "cost_usd": 0.01894,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_31",
+      "ok": true,
+      "reason": "",
+      "sha256": "4cc5f5d3882f10d9",
+      "dhash": "dcbefafefdffffff",
+      "duplicate_of": null,
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "bytes": 169348,
+      "truncated": false,
+      "blur": 534.5,
+      "brightness": 126.4,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_32",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.89,
+    "data": {
+      "vendor_name": "PURAN CAR SEAT",
+      "vendor_gstin": "24BOMPM8191K1ZA",
+      "vendor_phone": "98246 50125",
+      "invoice_no": "691",
+      "invoice_date": "2026-06-04",
+      "buyer_name": "G.S.R.T.C. DTC Vadodara",
+      "vehicle_no": "GJ 16 AV 6545",
+      "line_items": [
+        {
+          "description": "Driver Seat / Driver Back",
+          "hsn": null,
+          "qty": "2set",
+          "rate": null,
+          "amount": 700
+        },
+        {
+          "description": "Conductor Seat / Conductor Back",
+          "hsn": null,
+          "qty": "2set",
+          "rate": null,
+          "amount": 700
+        }
+      ],
+      "subtotal": null,
+      "tax_amount": null,
+      "total_amount": 1400,
+      "amount_in_words": null,
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2670,
+          "out": 186,
+          "cache_read": 0,
+          "usd": 0.018
+        }
+      ],
+      "cost_usd": 0.01859,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_32",
+      "ok": true,
+      "reason": "",
+      "sha256": "bda783b558589088",
+      "dhash": "5b7ffcfcfeff7fff",
+      "duplicate_of": null,
+      "dimensions": [
+        1200,
+        1600
+      ],
+      "bytes": 201047,
+      "truncated": false,
+      "blur": 537.8,
+      "brightness": 135.2,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_33",
+    "doc_class": "not_a_document",
+    "status": "refused",
+    "confidence": 1.0,
+    "data": null,
+    "refusal": {
+      "reason": "not_an_image:html_error_page",
+      "observed": "Rejected at preflight without any model call."
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [],
+      "cost_usd": 0,
+      "stages": [
+        "preflight:free_reject"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_33",
+      "ok": false,
+      "reason": "not_an_image:html_error_page",
+      "sha256": "",
+      "dhash": null,
+      "duplicate_of": null,
+      "dimensions": [
+        0,
+        0
+      ],
+      "bytes": 27150,
+      "truncated": false,
+      "blur": null,
+      "brightness": null,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_34",
+    "doc_class": "not_a_document",
+    "status": "refused",
+    "confidence": 0.95,
+    "data": null,
+    "refusal": {
+      "reason": "not_a_document",
+      "observed": "Classified as an object/scene photograph; no structured record present."
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 28,
+          "cache_read": 0,
+          "usd": 0.0006
+        }
+      ],
+      "cost_usd": 0.0006,
+      "stages": [
+        "route:claude-haiku-4-5-20251001:refused"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_34",
+      "ok": true,
+      "reason": "",
+      "sha256": "8fcefa5808619798",
+      "dhash": "46063663439e4ccc",
+      "duplicate_of": null,
+      "dimensions": [
+        780,
+        1040
+      ],
+      "bytes": 50485,
+      "truncated": false,
+      "blur": 236.1,
+      "brightness": 143.4,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_35",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "vendor_name": "Sajid Tyre Service",
+      "vendor_gstin": null,
+      "vendor_phone": null,
+      "invoice_no": "196",
+      "invoice_date": "2026-07-07",
+      "buyer_name": null,
+      "vehicle_no": "GJ06 AV 2305",
+      "line_items": [
+        {
+          "description": "Puncture Fitting",
+          "hsn": null,
+          "qty": 1,
+          "rate": null,
+          "amount": 150
+        },
+        {
+          "description": "Extra Puncture",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Machine Fitting",
+          "hsn": null,
+          "qty": 1,
+          "rate": null,
+          "amount": 50
+        },
+        {
+          "description": "Langot",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Geater",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Omni Patch 7-6-No-2",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": 1400
+        },
+        {
+          "description": "Tube",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Tyre",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Valve Body",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Valve Pin",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Tyre Opening Fitting",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Simple Patch",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Air Check",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Redial Patch",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "Filter",
+          "hsn": null,
+          "qty": null,
+          "rate": null,
+          "amount": null
+        }
+      ],
+      "subtotal": null,
+      "tax_amount": null,
+      "total_amount": 1600,
+      "amount_in_words": null,
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000548
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2666,
+          "out": 331,
+          "cache_read": 0,
+          "usd": 0.021605
+        }
+      ],
+      "cost_usd": 0.022153,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_35",
+      "ok": true,
+      "reason": "",
+      "sha256": "fb556adda883146a",
+      "dhash": "903210b43464a433",
+      "duplicate_of": null,
+      "dimensions": [
+        2296,
+        4080
+      ],
+      "bytes": 808360,
+      "truncated": false,
+      "blur": 1130.3,
+      "brightness": 133.3,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_36",
+    "doc_class": "not_a_document",
+    "status": "refused",
+    "confidence": 0.95,
+    "data": null,
+    "refusal": {
+      "reason": "not_a_document",
+      "observed": "Classified as an object/scene photograph; no structured record present."
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 502,
+          "out": 28,
+          "cache_read": 0,
+          "usd": 0.000642
+        }
+      ],
+      "cost_usd": 0.000642,
+      "stages": [
+        "route:claude-haiku-4-5-20251001:refused"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_36",
+      "ok": true,
+      "reason": "",
+      "sha256": "848cb7266467f67c",
+      "dhash": "cf4fcf2f2d6d1f3e",
+      "duplicate_of": null,
+      "dimensions": [
+        1552,
+        1552
+      ],
+      "bytes": 93820,
+      "truncated": false,
+      "blur": 273.0,
+      "brightness": 162.2,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_37",
+    "doc_class": "meter_reading",
+    "status": "extracted",
+    "confidence": 0.85,
+    "data": {
+      "reading_type": "odometer",
+      "odometer_km": 188973,
+      "trip_km": null,
+      "fuel_level_pct": null,
+      "vehicle_no": null,
+      "captured_at": null
+    },
+    "refusal": null,
+    "quality_flags": [
+      "low_sharpness"
+    ],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 27,
+          "cache_read": 0,
+          "usd": 0.000595
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2495,
+          "out": 63,
+          "cache_read": 0,
+          "usd": 0.01405
+        }
+      ],
+      "cost_usd": 0.014645,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->meter_reading/odometer",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_37",
+      "ok": true,
+      "reason": "",
+      "sha256": "27b9c1233f91af37",
+      "dhash": "7d7ffcfcecd8d873",
+      "duplicate_of": null,
+      "dimensions": [
+        1280,
+        960
+      ],
+      "bytes": 53780,
+      "truncated": false,
+      "blur": 104.7,
+      "brightness": 115.0,
+      "warnings": [
+        "low_sharpness"
+      ]
+    }
+  },
+  {
+    "doc_id": "optera_doc_38",
+    "doc_class": "meter_reading",
+    "status": "extracted",
+    "confidence": 0.95,
+    "data": {
+      "reading_type": "odometer",
+      "odometer_km": 32065.4,
+      "trip_km": 1458.1,
+      "fuel_level_pct": null,
+      "vehicle_no": null,
+      "captured_at": null
+    },
+    "refusal": null,
+    "quality_flags": [
+      "underexposed"
+    ],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 404,
+          "out": 27,
+          "cache_read": 0,
+          "usd": 0.000539
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2382,
+          "out": 68,
+          "cache_read": 0,
+          "usd": 0.01361
+        }
+      ],
+      "cost_usd": 0.014149,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->meter_reading/odometer",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_38",
+      "ok": true,
+      "reason": "",
+      "sha256": "9ac3a1d806826833",
+      "dhash": "cf1e2eae262eb63c",
+      "duplicate_of": null,
+      "dimensions": [
+        1600,
+        726
+      ],
+      "bytes": 126029,
+      "truncated": false,
+      "blur": 1216.4,
+      "brightness": 82.0,
+      "warnings": [
+        "underexposed"
+      ]
+    }
+  },
+  {
+    "doc_id": "optera_doc_39",
+    "doc_class": "meter_reading",
+    "status": "extracted",
+    "confidence": 0.95,
+    "data": {
+      "reading_type": "odometer",
+      "odometer_km": 31617.6,
+      "trip_km": 130.8,
+      "fuel_level_pct": null,
+      "vehicle_no": null,
+      "captured_at": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 27,
+          "cache_read": 0,
+          "usd": 0.000553
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2467,
+          "out": 67,
+          "cache_read": 0,
+          "usd": 0.01401
+        }
+      ],
+      "cost_usd": 0.014563,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->meter_reading/odometer",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_39",
+      "ok": true,
+      "reason": "",
+      "sha256": "f55237f5be23c690",
+      "dhash": "b39edee2f4fe7e7c",
+      "duplicate_of": null,
+      "dimensions": [
+        1599,
+        899
+      ],
+      "bytes": 74526,
+      "truncated": false,
+      "blur": 414.2,
+      "brightness": 106.2,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_40",
+    "doc_class": "not_a_document",
+    "status": "refused",
+    "confidence": 0.95,
+    "data": null,
+    "refusal": {
+      "reason": "not_a_document",
+      "observed": "Classified as an object/scene photograph; no structured record present."
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 404,
+          "out": 28,
+          "cache_read": 0,
+          "usd": 0.000544
+        }
+      ],
+      "cost_usd": 0.000544,
+      "stages": [
+        "route:claude-haiku-4-5-20251001:refused"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_40",
+      "ok": true,
+      "reason": "",
+      "sha256": "7098b3e5c40820b4",
+      "dhash": "3278d07099672c98",
+      "duplicate_of": null,
+      "dimensions": [
+        719,
+        1600
+      ],
+      "bytes": 161554,
+      "truncated": false,
+      "blur": 586.6,
+      "brightness": 134.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_41",
+    "doc_class": "meter_reading",
+    "status": "extracted",
+    "confidence": 0.95,
+    "data": {
+      "reading_type": "def_dispenser",
+      "amount_rs": 3199.76,
+      "litres": 43.24,
+      "rate_per_litre": 74.0,
+      "urea_concentration_pct": 32.5,
+      "vehicle_no": null,
+      "captured_at": "2026-07-13T12:12:00"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 27,
+          "cache_read": 0,
+          "usd": 0.000553
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2470,
+          "out": 93,
+          "cache_read": 0,
+          "usd": 0.014675
+        }
+      ],
+      "cost_usd": 0.015228,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->meter_reading/dispenser",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_41",
+      "ok": true,
+      "reason": "",
+      "sha256": "29e934fc09684bca",
+      "dhash": "c523399c34340a73",
+      "duplicate_of": null,
+      "dimensions": [
+        899,
+        1599
+      ],
+      "bytes": 176689,
+      "truncated": false,
+      "blur": 1242.8,
+      "brightness": 125.8,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_42",
+    "doc_class": "meter_reading",
+    "status": "extracted",
+    "confidence": 0.92,
+    "data": {
+      "reading_type": "odometer",
+      "odometer_km": 37057.9,
+      "trip_km": 38.6,
+      "fuel_level_pct": null,
+      "vehicle_no": null,
+      "captured_at": null
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 404,
+          "out": 27,
+          "cache_read": 0,
+          "usd": 0.000539
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2363,
+          "out": 67,
+          "cache_read": 0,
+          "usd": 0.01349
+        }
+      ],
+      "cost_usd": 0.014029,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->meter_reading/odometer",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_42",
+      "ok": true,
+      "reason": "",
+      "sha256": "e585ec0bebe63a9f",
+      "dhash": "04b2b23ffffc004b",
+      "duplicate_of": null,
+      "dimensions": [
+        1848,
+        4080
+      ],
+      "bytes": 479528,
+      "truncated": false,
+      "blur": 502.8,
+      "brightness": 116.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_43",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.77,
+    "data": {
+      "vendor_name": "JAVID SABIRBHAI SUNASARA",
+      "vendor_gstin": "24BKMPS1303KZZ3",
+      "vendor_phone": "9979633670",
+      "invoice_no": "1243",
+      "invoice_date": "2025-07-19",
+      "buyer_name": "DASHMESH TRANSPORT COMPANY",
+      "vehicle_no": "GJ 16 AY 4525",
+      "line_items": [
+        {
+          "description": "DIESEL EXHAUST FLUID",
+          "hsn": "31021000",
+          "qty": 39.3,
+          "rate": "50.85",
+          "amount": 2358.0
+        }
+      ],
+      "subtotal": 2358.0,
+      "tax_amount": 359.69,
+      "total_amount": 2358.0,
+      "amount_in_words": "Two Thousand Three Hundred and Fifty Eight Rupees only",
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [
+        "line_math_mismatch:39.3x50.85!=2358.0"
+      ],
+      "severity": 0.15
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 460,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.00059
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2170,
+          "out": 194,
+          "cache_read": 0,
+          "usd": 0.0157
+        }
+      ],
+      "cost_usd": 0.01629,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_43",
+      "ok": true,
+      "reason": "",
+      "sha256": "806cf224af5181ad",
+      "dhash": "c6fefafcfafafeff",
+      "duplicate_of": null,
+      "dimensions": [
+        780,
+        1040
+      ],
+      "bytes": 56062,
+      "truncated": false,
+      "blur": 387.6,
+      "brightness": 171.9,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_44",
+    "doc_class": "meter_reading",
+    "status": "extracted",
+    "confidence": 0.95,
+    "data": {
+      "reading_type": "odometer",
+      "odometer_km": 459794.3,
+      "trip_km": 8356.3,
+      "fuel_level_pct": null,
+      "vehicle_no": null,
+      "captured_at": "2026-07-19T15:55:00"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": [],
+      "severity": 0.0
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 404,
+          "out": 27,
+          "cache_read": 0,
+          "usd": 0.000539
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2363,
+          "out": 80,
+          "cache_read": 0,
+          "usd": 0.013815
+        }
+      ],
+      "cost_usd": 0.014354,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->meter_reading/odometer",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_44",
+      "ok": true,
+      "reason": "",
+      "sha256": "b073ac95994c0715",
+      "dhash": "01909060e098c8c1",
+      "duplicate_of": null,
+      "dimensions": [
+        1600,
+        720
+      ],
+      "bytes": 67913,
+      "truncated": false,
+      "blur": 362.8,
+      "brightness": 147.6,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_45",
+    "doc_class": "not_a_document",
+    "status": "refused",
+    "confidence": 0.95,
+    "data": null,
+    "refusal": {
+      "reason": "not_a_document",
+      "observed": "Classified as an object/scene photograph; no structured record present."
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 28,
+          "cache_read": 0,
+          "usd": 0.000558
+        }
+      ],
+      "cost_usd": 0.000558,
+      "stages": [
+        "route:claude-haiku-4-5-20251001:refused"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_45",
+      "ok": true,
+      "reason": "",
+      "sha256": "c862d6539067b1f2",
+      "dhash": "612e6cced2fc993f",
+      "duplicate_of": null,
+      "dimensions": [
+        720,
+        1280
+      ],
+      "bytes": 77104,
+      "truncated": false,
+      "blur": 279.1,
+      "brightness": 95.2,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_46",
+    "doc_class": "not_a_document",
+    "status": "refused",
+    "confidence": 0.95,
+    "data": null,
+    "refusal": {
+      "reason": "not_a_document",
+      "observed": "Classified as an object/scene photograph; no structured record present."
+    },
+    "quality_flags": [],
+    "validation": {
+      "passed": true,
+      "issues": []
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 28,
+          "cache_read": 0,
+          "usd": 0.000558
+        }
+      ],
+      "cost_usd": 0.000558,
+      "stages": [
+        "route:claude-haiku-4-5-20251001:refused"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_46",
+      "ok": true,
+      "reason": "",
+      "sha256": "ed21e40eed59db67",
+      "dhash": "6d7971343890d6da",
+      "duplicate_of": null,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "bytes": 98072,
+      "truncated": false,
+      "blur": 508.8,
+      "brightness": 116.5,
+      "warnings": []
+    }
+  },
+  {
+    "doc_id": "optera_doc_47",
+    "doc_class": "vendor_bill",
+    "status": "extracted",
+    "confidence": 0.45,
+    "data": {
+      "vendor_name": "ANUPAM ENTERPRISE",
+      "vendor_gstin": "24ACWPP0885C1ZB",
+      "vendor_phone": "+91 9408008181",
+      "invoice_no": "FF 127",
+      "invoice_date": "2026-03-14",
+      "buyer_name": "DTC Remali Baroda",
+      "vehicle_no": "GJ12 BT 9548",
+      "line_items": [
+        {
+          "description": "EXIDE XP-1000",
+          "hsn": "A3F6B034167",
+          "qty": 2,
+          "rate": null,
+          "amount": null
+        },
+        {
+          "description": "EXIDE XP-1000",
+          "hsn": "A3F6B041342",
+          "qty": null,
+          "rate": null,
+          "amount": null
+        }
+      ],
+      "subtotal": null,
+      "tax_amount": null,
+      "total_amount": null,
+      "amount_in_words": null,
+      "currency": "INR"
+    },
+    "refusal": null,
+    "quality_flags": [],
+    "validation": {
+      "passed": false,
+      "issues": [
+        "missing_total_amount"
+      ],
+      "severity": 0.3
+    },
+    "provenance": {
+      "calls": [
+        {
+          "stage": "route",
+          "model": "claude-haiku-4-5-20251001",
+          "in": 418,
+          "out": 26,
+          "cache_read": 0,
+          "usd": 0.000548
+        },
+        {
+          "stage": "extract",
+          "model": "claude-opus-4-5-20251101",
+          "in": 2666,
+          "out": 192,
+          "cache_read": 0,
+          "usd": 0.01813
+        }
+      ],
+      "cost_usd": 0.018678,
+      "stages": [
+        "route:claude-haiku-4-5-20251001->vendor_bill",
+        "extract:claude-opus-4-5-20251101@1568px",
+        "router_note:unfenced"
+      ]
+    },
+    "preflight": {
+      "doc_id": "optera_doc_47",
+      "ok": true,
+      "reason": "",
+      "sha256": "876737647425e4cb",
+      "dhash": "60f6e6c9d2b76dcd",
+      "duplicate_of": null,
+      "dimensions": [
+        899,
+        1599
+      ],
+      "bytes": 74407,
+      "truncated": false,
+      "blur": 575.9,
+      "brightness": 133.9,
+      "warnings": []
+    }
+  }
+]

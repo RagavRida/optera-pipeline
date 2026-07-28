@@ -1,0 +1,142 @@
+[
+  {
+    "class": "meter_reading",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 768,
+    "accuracy": 0.5714,
+    "correct": 8,
+    "total": 14,
+    "cost_per_doc": 0.001867,
+    "out_tokens": 105
+  },
+  {
+    "class": "meter_reading",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 1024,
+    "accuracy": 0.6429,
+    "correct": 9,
+    "total": 14,
+    "cost_per_doc": 0.002187,
+    "out_tokens": 106
+  },
+  {
+    "class": "meter_reading",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 1568,
+    "accuracy": 0.7143,
+    "correct": 10,
+    "total": 14,
+    "cost_per_doc": 0.002958,
+    "out_tokens": 108
+  },
+  {
+    "class": "meter_reading",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 768,
+    "accuracy": 0.7143,
+    "correct": 10,
+    "total": 14,
+    "cost_per_doc": 0.005605,
+    "out_tokens": 105
+  },
+  {
+    "class": "meter_reading",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 1024,
+    "accuracy": 0.5714,
+    "correct": 8,
+    "total": 14,
+    "cost_per_doc": 0.006581,
+    "out_tokens": 107
+  },
+  {
+    "class": "meter_reading",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 1568,
+    "accuracy": 0.6429,
+    "correct": 9,
+    "total": 14,
+    "cost_per_doc": 0.008859,
+    "out_tokens": 107
+  },
+  {
+    "class": "vendor_bill",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 1024,
+    "accuracy": 0.5714,
+    "correct": 24,
+    "total": 42,
+    "cost_per_doc": 0.0039,
+    "out_tokens": 382
+  },
+  {
+    "class": "vendor_bill",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 1568,
+    "accuracy": 0.5952,
+    "correct": 25,
+    "total": 42,
+    "cost_per_doc": 0.004494,
+    "out_tokens": 386
+  },
+  {
+    "class": "vendor_bill",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 1024,
+    "accuracy": 0.5952,
+    "correct": 25,
+    "total": 42,
+    "cost_per_doc": 0.011959,
+    "out_tokens": 399
+  },
+  {
+    "class": "vendor_bill",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 1568,
+    "accuracy": 0.619,
+    "correct": 26,
+    "total": 42,
+    "cost_per_doc": 0.013688,
+    "out_tokens": 400
+  },
+  {
+    "class": "work_report",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 1024,
+    "accuracy": 0.2333,
+    "correct": 7,
+    "total": 30,
+    "cost_per_doc": 0.005577,
+    "out_tokens": 699
+  },
+  {
+    "class": "work_report",
+    "model": "claude-haiku-4-5-20251001",
+    "dim": 1568,
+    "accuracy": 0.2667,
+    "correct": 8,
+    "total": 30,
+    "cost_per_doc": 0.005825,
+    "out_tokens": 646
+  },
+  {
+    "class": "work_report",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 1024,
+    "accuracy": 0.2667,
+    "correct": 8,
+    "total": 30,
+    "cost_per_doc": 0.015495,
+    "out_tokens": 617
+  },
+  {
+    "class": "work_report",
+    "model": "claude-sonnet-4-5-20250929",
+    "dim": 1568,
+    "accuracy": 0.5667,
+    "correct": 17,
+    "total": 30,
+    "cost_per_doc": 0.017204,
+    "out_tokens": 628
+  }
+]
